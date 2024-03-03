@@ -23,7 +23,7 @@ export class TasklistComponent {
     private router: Router,
     private taskService: TaskService,
     @Inject("BASE_URL") baseUrl: string) {
-    http.get<TasksDTO[]>(baseUrl + 'tasks').subscribe(result => { this.TaskData = result; }, error => console.error(error));
+    http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.TaskData = result; }, error => console.error(error));
   }
 
   taskName: string = "no data";

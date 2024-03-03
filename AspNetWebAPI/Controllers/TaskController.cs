@@ -32,7 +32,7 @@ namespace HorizonTask.Controllers
         }
 
         [HttpPut]
-        [Route("createTask")]
+        [Route("/tasklist")]
 
         public CreateTaskDTO createNewTask(CreateTaskDTO task)
         {

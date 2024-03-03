@@ -11,7 +11,7 @@ export class TaskService {
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
 
   createTask(Task: CreateTaskDTO) {
-    return this.http.put<CreateTaskDTO>(this.baseUrl + 'createTask', Task);
+    return this.http.put<CreateTaskDTO>(this.baseUrl + '/createTask', Task);
   };
 }
 
