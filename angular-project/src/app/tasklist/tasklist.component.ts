@@ -16,7 +16,6 @@ import { Subject, takeUntil } from 'rxjs';
 
 })
 export class TasklistComponent {
-  taskINFO = signal<CreateTaskDTO>(undefined);
 
   constructor(
     private route: ActivatedRoute, http: HttpClient,
@@ -41,14 +40,14 @@ export class TasklistComponent {
 
   public TaskData: TasksDTO[] = [];
   // newTask = signal<TasksDTO>(undefined);
-
+  taskINFO = signal<CreateTaskDTO>(undefined);
   onAddTask() {
     if (this.taskForm.valid) {
       this.taskService.createTask({
         taskName: this.taskForm.controls['name'].value,
         taskDescription: this.taskForm.controls['description'].value,
         taskPriority: this.taskForm.controls['priority'].value,
-      }).subscribe();
+      }).subscribe(TaskINFO => this.taskINFO.set(TaskINFO));
     }
   }
 
