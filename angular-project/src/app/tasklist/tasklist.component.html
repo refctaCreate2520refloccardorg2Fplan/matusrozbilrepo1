@@ -3,22 +3,21 @@
 <div class="container">
   <form [formGroup]="taskForm" (ngSumbit)="onAddTask()">
 
-
-    <label for="">Task</label>
+    <label for="">Task      </label>
     <input type="text" class="form-control" formControlName="name">
-    <br />
+    <br /> <br />
 
-    <label for="">Description</label>
+    <label for="">Description      </label>
     <input type="text" class="form-control" formControlName="description">
-    <br />
+    <br /> <br />
 
-    <label for="">Priority</label>
+    <label for="">Priority      </label>
     <input type="number" class="form-control" formControlName="priority">
-    <br />
+    <br /> <br />
 
 
     <button class="btn-primary" (click)="onAddTask()">Add Task</button>
-
+    <br /> <br /> <br />
   </form>
 </div>
 

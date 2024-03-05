@@ -1,7 +1,12 @@
 mat-toolbar {
   button {
-    margin-left: auto;
-  }
+    margin-left: auto; }
+        
+}
+
+mat-toolbar {
+  background-color: #272727;
+  color: lightpink;
 }
 
 .spacer {
