@@ -1,10 +1,11 @@
-import { NgFor } from '@angular/common';
+import { DATE_PIPE_DEFAULT_TIMEZONE, NgFor, formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, signal, Injectable } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, FormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, FormsModule, Validators, FormBuilder } from '@angular/forms';
 import { TaskService, CreateTaskDTO } from './task.service';
 import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 @Component({
@@ -28,12 +29,14 @@ export class TasklistComponent {
   taskName: string = "no data";
   taskDescription: string = "no data";
   taskPriority: number = 0;
+  taskDeadline: Date ;
 
   taskForm = new FormGroup(
     {
       name: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       priority: new FormControl(null, Validators.required),
+      deadline: new FormControl(null, Validators.required),
     })
 
 
@@ -47,6 +50,7 @@ export class TasklistComponent {
         taskName: this.taskForm.controls['name'].value,
         taskDescription: this.taskForm.controls['description'].value,
         taskPriority: this.taskForm.controls['priority'].value,
+        taskDeadline: this.taskForm.controls['deadline'].value,
       }).subscribe(TaskINFO => this.taskINFO.set(TaskINFO));
     }
   }
@@ -59,4 +63,5 @@ export interface TasksDTO {
   description: string;
   priority: number;
   isDone: boolean;
+  deadline: Date;
 }

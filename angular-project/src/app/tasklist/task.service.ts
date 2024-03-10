@@ -19,5 +19,6 @@ export interface CreateTaskDTO {
   taskName: string;
   taskDescription: string;
   taskPriority: number;
+  taskDeadline: Date; 
 }
 

@@ -12,6 +12,7 @@ import { errorHandlerInterceptor } from './app/api-authorization/error-handler.i
 import { authGuard } from './app/api-authorization/auth.guard';
 import { jwtInterceptor } from './app/api-authorization/jwt.interceptor';
 import { TasklistComponent } from './app/tasklist/tasklist.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export function getBaseUrl() {
   return 'https://localhost:7186/api';
@@ -42,7 +43,7 @@ bootstrapApplication(AppComponent, {
         { path: 'login', component: LoginComponent},
         { path: 'register', component: RegistrationComponent },
         { path: 'tasklist', component: TasklistComponent}
-      ])
+      ]), provideAnimationsAsync()
     ]
 })
   .catch(err => console.error(err));

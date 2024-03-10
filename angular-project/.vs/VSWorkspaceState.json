@@ -6,6 +6,6 @@
     "\\src\\app\\main-nav",
     "\\src\\app\\tasklist"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\src\\app\\tasklist\\tasklist.component.ts",
   "PreviewInSolutionExplorer": false
 }
