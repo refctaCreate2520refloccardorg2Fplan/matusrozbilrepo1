@@ -1,26 +1,25 @@
-<p>kys</p>
 
 <div class="container">
   <form [formGroup]="taskForm" (ngSumbit)="onAddTask()">
 
-    <label for="">Task      </label>
-    <input type="text" class="form-control" formControlName="name">
+    <label label-text for="">Task      </label><br />
+    <input type="text" style="width: 400px; height: 40px; margin: 10px; background-color: #272727; color: blue; " class="form-control" formControlName="name">
     <br /> <br />
 
-    <label for="">Description      </label>
-    <input type="text" class="form-control" formControlName="description">
+    <label label-text for="">Description      </label><br />
+    <input type="text" style="width:400px; height:40px; margin: 10px" class="form-control" formControlName="description">
     <br /> <br />
 
-    <label for="">Priority      </label>
-    <input type="number" class="form-control" formControlName="priority">
+    <label label-text for="">Priority      </label><br />
+    <input type="number" style="width:400px; height:40px; margin: 10px" class="form-control" formControlName="priority" min="0" max="5">
     <br /> <br />
 
-    <label for="">Deadline     </label>
-    <input type="date" class="form-control" formControlName="deadline">
+    <label label-text for="">Deadline     </label><br />
+    <input type="date" style="width:200px; height:40px; margin: 10px" class="form-control" formControlName="deadline">
     <br /> <br />
 
 
-    <button class="btn-primary" (click)="onAddTask()">Add Task</button>
+    <a class="btn-primary" (click)="onAddTask()">Add Task</a>
     <br /> <br /> <br />
   </form>
 </div>

@@ -11,6 +11,6 @@ namespace AspNetCoreAPI.Models
         public int Priority { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public bool IsDone { get; set; } = false;
-        public DateOnly Deadline { get; set; }
+        public DateOnly? Deadline { get; set; }
     }
 }
