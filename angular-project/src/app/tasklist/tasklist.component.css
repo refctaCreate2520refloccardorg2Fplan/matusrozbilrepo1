@@ -3,9 +3,15 @@
   src: url('..\..\assets\unytour-semiboldcondensed.otf');
 }
 
-inputdes {
-    background-color: #272727;
-    color:blue;
+.form-control {
+  border-color: #ff6666;
+  border-width: 2px;
+  background-color: transparent;
+  width: 400px;
+  height: 40px;
+  margin: 10px;
+  color: white;
+  border-radius: 10px;
 }
 
 body {
@@ -14,18 +20,20 @@ body {
 }
 
 form {
-  text-align:center;
+  text-align: center;
   font-family: Unytour;
   margin-left: 2vw;
   background-color: #252525;
   font-size: 1.7rem;
+  color: #ff6666;
 }
-/* CSS */
+
+
 a {
   outline: 0;
   grid-gap: 8px;
   align-items: center;
-  background-color: #ff90e8;
+  background-color: #a0b2ff;
   color: #000;
   border: 1px solid #000;
   border-radius: 4px;
@@ -52,4 +60,15 @@ a {
   a:focus-visible {
     outline-offset: 1px;
   }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+  outline-color: #ff7979;
+  outline-width: 4px;
+}
+
+
 

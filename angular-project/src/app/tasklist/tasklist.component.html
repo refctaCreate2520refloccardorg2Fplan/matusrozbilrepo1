@@ -3,19 +3,19 @@
   <form [formGroup]="taskForm" (ngSumbit)="onAddTask()">
 
     <label label-text for="">Task      </label><br />
-    <input type="text" style="width: 400px; height: 40px; margin: 10px; background-color: #272727; color: blue; " class="form-control" formControlName="name">
+    <input type="text" class="form-control" formControlName="name">
     <br /> <br />
 
     <label label-text for="">Description      </label><br />
-    <input type="text" style="width:400px; height:40px; margin: 10px" class="form-control" formControlName="description">
+    <input type="text" class="form-control" formControlName="description">
     <br /> <br />
 
     <label label-text for="">Priority      </label><br />
-    <input type="number" style="width:400px; height:40px; margin: 10px" class="form-control" formControlName="priority" min="0" max="5">
+    <input type="number" class="form-control" formControlName="priority" min="0" max="5">
     <br /> <br />
 
     <label label-text for="">Deadline     </label><br />
-    <input type="date" style="width:200px; height:40px; margin: 10px" class="form-control" formControlName="deadline">
+    <input type="date" class="form-control" formControlName="deadline">
     <br /> <br />
 
 
@@ -24,16 +24,18 @@
   </form>
 </div>
 
+
+
 <div class="accordion" id="accordionExample">
   <div class="accordion-item" *ngFor="let tasks of TaskData; let i = index">
-    <h2 class="accordion-header" [attr.id]="'heading' + i">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" [attr.aria-controls]="'#collapse' + i">
-        <strong>{{ tasks.name }} &nbsp; {{tasks.description}} &nbsp; {{tasks.priority}} &nbsp; {{tasks.isDone}}</strong>
-        <div></div>
+    <h2 class="accordion-header" id="'headingOne' + i">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        {{tasks.name}} &nbsp; {{tasks.description}} &nbsp; {{tasks.priority}} &nbsp; {{tasks.isDone}}
       </button>
     </h2>
-    <div [attr.id]="'collapse' + i" class="accordion-collapse collapse" [attr.aria-labelledby]="'#heading' + i" data-bs-parent="#accordionExample">
+    <div id="'collapseOne' + i" class="accordion-collapse collapse show" aria-labelledby="'headingOne' + i" data-bs-parent="#accordionExample">
       <div class="accordion-body">
+        <strong>{{tasks.descriptioń}}</strong>
       </div>
     </div>
   </div>

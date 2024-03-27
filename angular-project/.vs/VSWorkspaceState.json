@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
     "\\src\\app\\main-nav",
-    "\\src\\app\\tasklist"
+    "\\src\\app\\tasklist",
+    "\\src\\assets"
   ],
+  "SelectedNode": "\\src\\assets\\unytour-semiboldcondensed.otf",
   "PreviewInSolutionExplorer": false
 }
