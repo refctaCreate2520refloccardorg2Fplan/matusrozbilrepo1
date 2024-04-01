@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app\\main-nav",
-    "\\src\\app\\tasklist",
+    "\\src\\app",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\assets\\unytour-semiboldcondensed.otf",
+  "SelectedNode": "\\angular.json",
   "PreviewInSolutionExplorer": false
 }

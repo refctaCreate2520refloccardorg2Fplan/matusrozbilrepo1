@@ -4,6 +4,8 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("src\assets\png.png");
+  background-size: cover;
   background-color: #222222;
   color: lightpink;
 }

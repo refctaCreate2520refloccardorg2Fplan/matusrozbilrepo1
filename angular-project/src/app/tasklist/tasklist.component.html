@@ -24,7 +24,7 @@
   </form>
 </div>
 
-
+<!--
 
 <div class="accordion" id="accordionExample">
   <div class="accordion-item" *ngFor="let tasks of TaskData; let i = index">
@@ -35,8 +35,27 @@
     </h2>
     <div id="'collapseOne' + i" class="accordion-collapse collapse show" aria-labelledby="'headingOne' + i" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>{{tasks.descriptioń}}</strong>
+        <strong>{{tasks.description}}</strong>
       </div>
     </div>
   </div>
 </div>
+-->
+<table class="tg">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Priority</th>
+      <th>IsDone</th>
+      <th>Deadline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tasks of TaskData; let i = index">
+      <td>{{tasks.name}}</td>
+      <td>{{tasks.priority}}</td>
+      <td>{{tasks.isDone}}</td>
+      <td>{{tasks.deadline}}</td>
+    </tr>
+  </tbody>
+  </table>
