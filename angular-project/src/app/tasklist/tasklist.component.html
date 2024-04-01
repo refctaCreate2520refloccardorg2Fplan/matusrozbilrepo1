@@ -41,21 +41,22 @@
   </div>
 </div>
 -->
-<table class="tg">
-  <thead>
-    <tr>
-      <th>Task</th>
-      <th>Priority</th>
-      <th>IsDone</th>
-      <th>Deadline</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let tasks of TaskData; let i = index">
-      <td>{{tasks.name}}</td>
-      <td>{{tasks.priority}}</td>
-      <td>{{tasks.isDone}}</td>
-      <td>{{tasks.deadline}}</td>
-    </tr>
-  </tbody>
-  </table>
+
+  <table class="tablemain">
+    <thead class="tbHead">
+      <tr>
+        <th class="tbHeadItem">Task</th>
+        <th class="tbHeadItem">Priority</th>
+        <th class="tbHeadItem">IsDone</th>
+        <th class="tbHeadItem">Deadline</th>
+      </tr>
+    </thead>
+    <tbody class="tbBody" *ngFor="let tasks of TaskData; let i = index">
+      <tr>
+        <td class="tbBodyItem">{{tasks.name}}</td>
+        <td class="tbBodyItem">{{tasks.priority}}</td>
+        <td class="tbBodyItem">{{tasks.isDone}}</td>
+        <td class="tbBodyItem">{{tasks.deadline}}</td>
+      </tr>
+    </tbody>
+    </table>
