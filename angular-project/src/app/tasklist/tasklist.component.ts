@@ -1,4 +1,4 @@
-import { DATE_PIPE_DEFAULT_TIMEZONE, NgFor, formatDate } from '@angular/common';
+import { DATE_PIPE_DEFAULT_TIMEZONE, DatePipe, NgFor, formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, signal, Injectable } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, FormsModule, Validators, FormBuilder } from '@angular/forms';
@@ -11,7 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 @Component({
   selector: 'app-tasklist',
   standalone: true,
-  imports: [NgFor, ReactiveFormsModule],
+  imports: [NgFor, ReactiveFormsModule, DatePipe],
   templateUrl: './tasklist.component.html',
   styleUrl: './tasklist.component.css',
 

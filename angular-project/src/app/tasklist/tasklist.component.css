@@ -5,6 +5,7 @@
 
 .container {
   text-align: center;
+  width: 40vw;
 }
 
 .form-control {
@@ -12,9 +13,9 @@
   border-width: 2px;
   text-align: center;
   background-color: transparent;
-  width: 400px;
-  height: 40px;
-  margin: 10px;
+  width: 25vw;
+  height: 3vw;
+  margin: 0.7vw;
   display:inline;
   color: white;
   border-radius: 10px;
@@ -25,7 +26,9 @@ body {
   color: lightpink;
 }
 
+
 form {
+  width: 40vw;
   padding-top: 2vw;
   margin-top: 3vw;
   text-align: center;

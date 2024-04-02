@@ -1,62 +1,44 @@
-
-<div class="container">
-  <form [formGroup]="taskForm" (ngSumbit)="onAddTask()">
-
-    <label label-text for="">Task      </label><br />
-    <input type="text" class="form-control" formControlName="name">
-    <br /> <br />
-
-    <label label-text for="">Description      </label><br />
-    <input type="text" class="form-control" formControlName="description">
-    <br /> <br />
-
-    <label label-text for="">Priority      </label><br />
-    <input type="number" class="form-control" formControlName="priority" min="0" max="5">
-    <br /> <br />
-
-    <label label-text for="">Deadline     </label><br />
-    <input type="date" class="form-control" formControlName="deadline">
-    <br /> <br />
-
-
-    <a class="btn-primary" (click)="onAddTask()">Add Task</a>
-    <br /> <br /> <br />
-  </form>
-</div>
-
-<!--
-
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item" *ngFor="let tasks of TaskData; let i = index">
-    <h2 class="accordion-header" id="'headingOne' + i">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        {{tasks.name}} &nbsp; {{tasks.description}} &nbsp; {{tasks.priority}} &nbsp; {{tasks.isDone}}
-      </button>
-    </h2>
-    <div id="'collapseOne' + i" class="accordion-collapse collapse show" aria-labelledby="'headingOne' + i" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>{{tasks.description}}</strong>
-      </div>
-    </div>
+  <div class="container">
+    <form [formGroup]="taskForm" (ngSumbit)="onAddTask()">
+  
+      <label label-text for="">Task      </label><br />
+      <input type="text" class="form-control" formControlName="name">
+      <br /> <br />
+  
+      <label label-text for="">Description      </label><br />
+      <input type="text" class="form-control" formControlName="description">
+      <br /> <br />
+  
+      <label label-text for="">Priority</label> <br>
+      <input type="number" class="form-control" formControlName="priority" min="0" max="5">
+      <br /> <br />
+  
+      <label label-text for="">Deadline</label> <br>
+      <input type="date" class="form-control" formControlName="deadline">
+      <br /> <br />
+  
+  
+      <a class="btn-primary" (click)="onAddTask()">Add Task</a>
+      <br /> <br /> <br />
+    </form>
   </div>
-</div>
--->
+  
+    <table class="tablemain">
+      <thead class="tbHead">
+        <tr>
+          <th class="tbHeadItem">Task</th>
+          <th class="tbHeadItem">Priority</th>
+          <th class="tbHeadItem">IsDone</th>
+          <th class="tbHeadItem">Deadline</th>
+        </tr>
+      </thead>
+      <tbody class="tbBody" *ngFor="let tasks of TaskData; let i = index">
+        <tr>
+          <td class="tbBodyItem">{{tasks.name}}</td>
+          <td class="tbBodyItem">{{tasks.priority}}</td>
+          <td class="tbBodyItem">{{tasks.isDone}}</td>
+          <td class="tbBodyItem">{{tasks.deadline | date}}</td>
+        </tr>
+      </tbody>
+      </table>
 
-  <table class="tablemain">
-    <thead class="tbHead">
-      <tr>
-        <th class="tbHeadItem">Task</th>
-        <th class="tbHeadItem">Priority</th>
-        <th class="tbHeadItem">IsDone</th>
-        <th class="tbHeadItem">Deadline</th>
-      </tr>
-    </thead>
-    <tbody class="tbBody" *ngFor="let tasks of TaskData; let i = index">
-      <tr>
-        <td class="tbBodyItem">{{tasks.name}}</td>
-        <td class="tbBodyItem">{{tasks.priority}}</td>
-        <td class="tbBodyItem">{{tasks.isDone}}</td>
-        <td class="tbBodyItem">{{tasks.deadline}}</td>
-      </tr>
-    </tbody>
-    </table>

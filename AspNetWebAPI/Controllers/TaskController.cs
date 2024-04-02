@@ -27,6 +27,7 @@ namespace HorizonTask.Controllers
                 Description = Tasks.Description,
                 Priority = Tasks.Priority,
                 IsDone = Tasks.IsDone,
+                Deadline = Tasks.Deadline,
             }
             );
         }
