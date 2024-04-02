@@ -41,6 +41,7 @@ namespace HorizonTask.Controllers
                 Name = task.taskName,
                 Description = task.taskDescription,
                 Priority = task.taskPriority,
+                Deadline = task.taskDeadline,
             };
             _context.Add(taskCreate);
             _context.SaveChanges();

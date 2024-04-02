@@ -13,24 +13,6 @@ namespace AspNetCoreAPI.Data
         {}
         public DbSet<ApplicationTask> Tasks { get; set; }
 
-        public class DateOnlyConverter : ValueConverter<DateOnly, DateTime>
-        {
-            public DateOnlyConverter()
-                : base(dateOnly =>
-                        dateOnly.ToDateTime(TimeOnly.MinValue),
-                    dateTime => DateOnly.FromDateTime(dateTime))
-            { }
-        }
 
-        protected override void ConfigureConventions(ModelConfigurationBuilder builder)
-        {
-
-            builder.Properties<DateOnly>()
-                .HaveConversion<DateOnlyConverter>()
-                .HaveColumnType("date");
-
-            base.ConfigureConventions(builder);
-
-        }
     }
 }
