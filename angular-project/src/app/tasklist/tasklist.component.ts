@@ -1,4 +1,4 @@
-import { DATE_PIPE_DEFAULT_TIMEZONE, DatePipe, NgFor, formatDate } from '@angular/common';
+import { DatePipe, NgFor, NgIf, CommonModule} from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, signal, Injectable } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, FormsModule, Validators, FormBuilder } from '@angular/forms';
@@ -11,7 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 @Component({
   selector: 'app-tasklist',
   standalone: true,
-  imports: [NgFor, ReactiveFormsModule, DatePipe],
+  imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule],
   templateUrl: './tasklist.component.html',
   styleUrl: './tasklist.component.css',
 
@@ -44,6 +44,7 @@ export class TasklistComponent {
   public TaskData: TasksDTO[] = [];
   // newTask = signal<TasksDTO>(undefined);
   taskINFO = signal<CreateTaskDTO>(undefined);
+  xd : boolean = false;
   onAddTask() {
     if (this.taskForm.valid) {
       this.taskService.createTask({
@@ -54,6 +55,22 @@ export class TasklistComponent {
       }).subscribe(TaskINFO => this.taskINFO.set(TaskINFO));
     }
   }
+
+
+  tglbtn() {
+    var elem = document.getElementById("tglbttn");
+    if (elem.innerHTML=="Show finished tasks")
+    {
+      elem.innerHTML = "Show unfinished tasks";
+      this.xd = true;
+    }
+
+    else
+    {
+      elem.innerHTML = "Show finished tasks";
+      this.xd = false;
+    }
+          }
 
 }
 

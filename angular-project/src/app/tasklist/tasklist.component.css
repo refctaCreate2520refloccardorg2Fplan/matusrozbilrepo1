@@ -5,7 +5,14 @@
 
 .container {
   text-align: center;
-  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swcontainer {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-control {
@@ -33,7 +40,6 @@ form {
   margin-top: 3vw;
   text-align: center;
   font-family: Unytour;
-  margin-left: 2vw;
   margin-bottom: 2vw;
   border-radius: 20px;
   backdrop-filter: blur(10px);
@@ -117,6 +123,6 @@ button:focus {
  border-radius: 20px;
  backdrop-filter: blur(5px);
  background-color:#212121a8;
+ margin-top: 4vw;
 }
-
 
