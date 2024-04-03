@@ -1,9 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.github",
+    "\\angular-project",
+    "\\angular-project\\src",
+    "\\angular-project\\src\\app",
+    "\\angular-project\\src\\app\\dashboard",
+    "\\angular-project\\src\\app\\tasklist",
     "\\AspNetWebAPI",
-    "\\AspNetWebAPI\\Authentication"
+    "\\AspNetWebAPI\\DTO",
+    "\\AspNetWebAPI\\Models"
   ],
-  "SelectedNode": "\\AspNetWebAPI\\Authentication\\JwtHandler.cs",
+  "SelectedNode": "\\AspNetWebAPI\\Models\\ApplicationTask.cs",
   "PreviewInSolutionExplorer": false
 }
