@@ -27,7 +27,8 @@
     <button type="button" id="tglbttn" style="background-color: #F9DC5C;" (click)="tglbtn()">Show finished tasks</button>
   </div>
 
-  
+  <div *ngIf="xd==true; else elseBlock">
+    <div>
       <table class="tablemain">
         <thead class="tbHead">
           <tr>
@@ -46,7 +47,9 @@
           </tr>
         </tbody>
         </table>
-
+      </div>
+  </div> 
+  <ng-template #elseBlock>
         <table class="tablemain">
           <thead class="tbHead">
             <tr>
@@ -65,8 +68,8 @@
             </tr>
           </tbody>
           </table>
-
-
+        
+  </ng-template>
           <!--
 
       <table class="tablemain">
@@ -96,5 +99,4 @@
           </tr>
         </tbody>
         </table>
-
           -->
