@@ -1,6 +1,6 @@
 mat-toolbar {
-  backdrop-filter: blur(5px);
-    background-color:#21212191;
+  backdrop-filter: blur(7px);
+    background-color:#2121212a;
   a {
   margin-left: auto;
     }

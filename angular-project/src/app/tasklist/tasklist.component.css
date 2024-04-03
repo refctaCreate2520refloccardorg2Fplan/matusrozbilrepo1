@@ -42,12 +42,11 @@ form {
   font-family: Unytour;
   margin-bottom: 2vw;
   border-radius: 20px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
   background-color:#21212140;
   font-size: 2vw;
   color: #ff6666;
 }
-
 
 a {
   outline: 0;
@@ -87,16 +86,18 @@ textarea:focus,
 button:focus {
     outline: none;
   outline-color: #ff7979;
-  outline-width: 4px;
+  outline-width: 3px;
 }
 
 .tbBodyItem {
+  font-family: Unytour;
   padding: 0.6vw;
   padding-left: 1.5vw;
   font-size: 1.5vw;
 }
 
 .tbHeadItem {
+  font-family: Unytour;
   padding: 0.6vw;
   padding-top: 1.5vw;
   padding-bottom: 1.5vw;
@@ -104,6 +105,7 @@ button:focus {
 }
 
 .tbHead {
+  font-family: Unytour;
   height: 25%;
   top: 0;
   bottom: 0;
@@ -113,16 +115,20 @@ button:focus {
 }
 
 .tbBody {
+  font-family: Unytour;
   height: 75%;
   color: rgb(255, 222, 227);
 }
 
 .tablemain {
+  font-family: Unytour;
   margin-left: 3vw;
  width: 94%;
  border-radius: 20px;
  backdrop-filter: blur(5px);
  background-color:#212121a8;
+ border-bottom-width: 20px;
+ border-bottom-style: solid;
  margin-top: 4vw;
 }
 
