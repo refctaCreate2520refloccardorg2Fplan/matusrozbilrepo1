@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, signal, Injectable } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, FormsModule, Validators, FormBuilder } from '@angular/forms';
 import { TaskService, CreateTaskDTO } from './task.service';
-import { Router, RouterModule, ActivatedRoute } from '@angular/router';
+import { Router, RouterModule, ActivatedRoute, RouterLink } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
@@ -11,7 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 @Component({
   selector: 'app-tasklist',
   standalone: true,
-  imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule],
+  imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule, RouterLink],
   templateUrl: './tasklist.component.html',
   styleUrl: './tasklist.component.css',
 
@@ -52,7 +52,7 @@ export class TasklistComponent {
         taskDescription: this.taskForm.controls['description'].value,
         taskPriority: this.taskForm.controls['priority'].value,
         taskDeadline: this.taskForm.controls['deadline'].value,
-      }).subscribe(TaskINFO => this.taskINFO.set(TaskINFO));
+      }).subscribe(TaskINFO => this.taskINFO.set(TaskINFO), this.router.navigate['/tasklist']);
     }
   }
 

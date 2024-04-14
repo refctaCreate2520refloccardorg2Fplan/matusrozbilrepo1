@@ -2,6 +2,7 @@
 using AspNetCoreAPI.DTO;
 using AspNetCoreAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace HorizonTask.Controllers
 {
@@ -47,6 +48,30 @@ namespace HorizonTask.Controllers
             _context.Add(taskCreate);
             _context.SaveChanges();
             return task;
+        }
+
+        [HttpGet]
+        [Route("getGuildById")]
+
+        public TaskDetailDTO GetTaskById(int id)
+        {
+            ApplicationTask task = _context.Tasks.Where(task => task.Id == id).FirstOrDefault();
+
+            if (task != null)
+            {
+                return new TaskDetailDTO
+                {
+                    Id = task.Id,
+                    Name = task.Name,
+                    Description = task.Description,
+                    Priority = task.Priority,
+                    Deadline = task.Deadline,
+                };
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }

@@ -13,6 +13,7 @@ import { authGuard } from './app/api-authorization/auth.guard';
 import { jwtInterceptor } from './app/api-authorization/jwt.interceptor';
 import { TasklistComponent } from './app/tasklist/tasklist.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { TaskdetailComponent } from './app/taskdetail/taskdetail.component';
 
 export function getBaseUrl() {
   return 'https://localhost:7186/api';
@@ -42,7 +43,8 @@ bootstrapApplication(AppComponent, {
         { path: '', component: DashboardComponent, canActivate: [authGuard]},
         { path: 'login', component: LoginComponent},
         { path: 'register', component: RegistrationComponent },
-        { path: 'tasklist', component: TasklistComponent}
+        { path: 'tasklist', component: TasklistComponent},
+        { path: 'taskDetail/:id', component: TaskdetailComponent}
       ]), provideAnimationsAsync()
     ]
 })
