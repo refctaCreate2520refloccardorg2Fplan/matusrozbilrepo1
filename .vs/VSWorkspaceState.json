@@ -11,6 +11,6 @@
     "\\AspNetWebAPI\\DTO",
     "\\AspNetWebAPI\\Models"
   ],
-  "SelectedNode": "\\AspNetWebAPI\\Models\\ApplicationTask.cs",
+  "SelectedNode": "\\AspNetWebAPI\\DTO\\CreateTaskDTO.cs",
   "PreviewInSolutionExplorer": false
 }

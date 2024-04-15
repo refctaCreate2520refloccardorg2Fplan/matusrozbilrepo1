@@ -44,7 +44,7 @@ bootstrapApplication(AppComponent, {
         { path: 'login', component: LoginComponent},
         { path: 'register', component: RegistrationComponent },
         { path: 'tasklist', component: TasklistComponent},
-        { path: 'taskDetail/:id', component: TaskdetailComponent}
+        { path: 'taskdetail/:id', component: TaskdetailComponent}
       ]), provideAnimationsAsync()
     ]
 })

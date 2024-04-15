@@ -13,6 +13,7 @@ export class DetailserviceService {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("id", id);
 
-    return this.http.get<TaskDetailDTO>(this.baseUrl + 'guilds/getTaskById', { params: queryParams });
+    return this.http.get<TaskDetailDTO>(this.baseUrl + '/taskdetail', { params: queryParams });
   }
 }
+
