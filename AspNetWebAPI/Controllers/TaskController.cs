@@ -3,6 +3,7 @@ using AspNetCoreAPI.DTO;
 using AspNetCoreAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading.Tasks;
 
 namespace HorizonTask.Controllers
 {
@@ -72,6 +73,31 @@ namespace HorizonTask.Controllers
             {
                 return null;
             }
+        }
+        [HttpPut]
+        [Route("editTask")]
+        public TaskDetailDTO EditTask(TaskDetailDTO task)
+        {
+            var taskik = _context.Tasks.Where(x => x.Id == task.Id).Single();
+            taskik.Name = task.Name;
+            taskik.Description = task.Description;
+            taskik.IsDone = task.IsDone;
+            taskik.Deadline = task.Deadline;
+            taskik.Priority = task.Priority;
+            _context.SaveChanges();
+           
+            var editnuty = new TaskDetailDTO()
+            {
+                Id = task.Id,
+                Name = task.Name,
+                Description = task.Description,
+                Priority = task.Priority,
+                Deadline = task.Deadline,
+
+            };
+            return editnuty;
+            
+            
         }
 
     }
