@@ -52,7 +52,7 @@ namespace HorizonTask.Controllers
         }
 
         [HttpGet]
-        [Route("getGuildById")]
+        [Route("/taskdetail/{id:int}")]
 
         public TaskDetailDTO GetTaskById(int id)
         {

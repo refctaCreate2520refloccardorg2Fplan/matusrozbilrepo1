@@ -19,9 +19,8 @@ export class TaskdetailComponent {
   }
 
   ngOnInit(): void {
-    const RouteParams = this.route.snapshot.paramMap;
-    const neviem = Number(RouteParams.get('Id'));
-    this.taskService.getTaskDetails(neviem).subscribe(thtask => this.thtask.set(thtask));
+    const id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.taskService.getTaskDetails(id).subscribe(thtask => this.thtask.set(thtask));
   };
 
   thtask = signal<TaskDetailDTO>(undefined);
