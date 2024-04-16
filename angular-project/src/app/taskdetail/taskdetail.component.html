@@ -1,1 +1,8 @@
 <p>taskdetail works!</p>
+@if (thtask()) {
+    <div>
+        <p> {{thtask().name}}</p>
+        <p> {{thtask().description}}</p>
+        <p> {{thtask().priority}}</p>
+    </div>
+}

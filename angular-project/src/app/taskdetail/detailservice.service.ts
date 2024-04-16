@@ -9,7 +9,7 @@ export class DetailserviceService {
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {}
 
-  GetGuildInfo(id: number) {
+  GetTaskInfo(id: number) {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("id", id);
 

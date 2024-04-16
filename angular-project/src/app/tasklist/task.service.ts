@@ -1,5 +1,7 @@
 import { Injectable, Inject, signal } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { TaskDetailDTO } from '../taskdetail/TaskDetailDTO';
 
 
 @Injectable({
@@ -12,6 +14,11 @@ export class TaskService {
   createTask(Task: CreateTaskDTO) {
     return this.http.put<CreateTaskDTO>(this.baseUrl + '/tasklist', Task);
   };
+
+  getTaskDetails(id:number): Observable<TaskDetailDTO>
+  {
+      return of({name: "halo", description: "aaa", priority: 2, isDone: false, dateTime: new Date()});
+  }
 }
 
 
