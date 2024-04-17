@@ -13,12 +13,24 @@ export class TaskService {
   createTask(Task: CreateTaskDTO) {
     return this.http.put<CreateTaskDTO>(this.baseUrl + '/tasklist', Task);
   };
+  
   getTaskDetails(id: number){
     return this.http.get<TaskDetailDTO>(this.baseUrl + "/taskdetail/" + id);
+  }
+
+  EditTask(task: TaskUpdateDTO) {
+    return this.http.put<TaskDetailDTO>(this.baseUrl + '/editTask', task);
   }
   
 }
 
+
+export interface TaskUpdateDTO {
+  updName: string;
+  updDescription: string;
+  updPriority: number;
+  updDeadline: Date;
+}
 
 export interface CreateTaskDTO {
   taskName: string;

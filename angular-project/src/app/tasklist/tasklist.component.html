@@ -64,10 +64,7 @@
           </thead>
           <tbody class="tbBody" *ngFor="let tasks of TaskData">
             <tr *ngIf="!tasks.isDone">
-              <td class="tbBodyItem">{{tasks.name}}</td>
-              <td class="tbBodyItem">
-                <button type="button" [routerLink]="['/taskdetail', tasks.id]">CLICK HETREE</button>
-              </td>
+              <td class="tbBodyItem" type="button" [routerLink]="['/taskdetail', tasks.id]">{{tasks.name}}</td>
               <td class="tbBodyItem">{{tasks.priority}}</td>
               <td class="tbBodyItem">{{tasks.isDone}}</td>
               <td class="tbBodyItem">{{tasks.deadline | date}}</td>
@@ -77,33 +74,3 @@
         
   </ng-template>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          <!--
-
-      <table class="tablemain">
-        <thead class="tbHead">
-          <tr>
-            <th class="tbHeadItem">Task</th>
-            <th class="tbHeadItem">Priority</th>
-            <th class="tbHeadItem">IsDone</th>
-            <th class="tbHeadItem">Deadline</th>
-          </tr>
-        </thead>
-        <tbody class="tbBody" *ngFor="let tasks of TaskData">
-          <tr>
-            <ng-template [ngIf]="tasks.isDone" [ngElse]="!tasks.isDone">
-              <td class="tbBodyItem">{{tasks.name}}</td>
-              <td class="tbBodyItem">{{tasks.priority}}</td>
-              <td class="tbBodyItem">{{tasks.isDone}}</td>
-              <td class="tbBodyItem">{{tasks.deadline | date}}</td>
-            </ng-template>
-
-            <ng-template #!tasks.isDone>
-              <td class="tbBodyItem">{{tasks.name}}</td>
-              <td class="tbBodyItem">{{tasks.priority}}</td>
-              <td class="tbBodyItem">{{tasks.isDone}}</td>
-              <td class="tbBodyItem">{{tasks.deadline | date}}</td>
-            </ng-template>
-          </tr>
-        </tbody>
-        </table>
-          -->
