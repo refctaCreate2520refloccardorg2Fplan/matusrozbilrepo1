@@ -75,13 +75,13 @@ namespace HorizonTask.Controllers
             }
         }
         [HttpPut]
-        [Route("editTask")]
+        [Route("/editTask")]
         public TaskDetailDTO EditTask(TaskDetailDTO task)
         {
             var taskik = _context.Tasks.Where(x => x.Id == task.Id).Single();
             taskik.Name = task.Name;
             taskik.Description = task.Description;
-            taskik.IsDone = task.IsDone;
+            
             taskik.Deadline = task.Deadline;
             taskik.Priority = task.Priority;
             _context.SaveChanges();

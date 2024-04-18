@@ -1,12 +1,12 @@
 <p>taskdetail works!</p>
 
-@if (thtask()) {
+<!-- @if (thtask()) {
     <div>
         <p> {{thtask().name}}</p>
         <p> {{thtask().description}}</p>
         <p> {{thtask().priority}}</p>
     </div>
-}
+} -->
 
 <div >
     <form class="container" [formGroup]="updateForm" (ngSumbit)="onEditTask()">
@@ -16,18 +16,18 @@
       <br /> <br />
   
       <label label-text for="">Description      </label><br />
-      <input type="text" class="form-control" formControlName="description" value="{{thtask().description}}">
+      <input type="text" class="form-control" formControlName="description">
       <br /> <br />
   
       <label label-text for="">Priority</label> <br>
-      <input type="number" class="form-control" value="{{thtask().priority}}" formControlName="priority" min="0" max="5">
+      <input type="number" class="form-control" formControlName="priority" min="0" max="5">
       <br /> <br />
   
       <label label-text for="">Deadline</label> <br>
-      <input type="date" class="form-control" value="{{thtask().dateTime}}" formControlName="deadline">
+      <input type="date" class="form-control" vformControlName="deadline">
       <br><br>
 
-      <a class="btn-primary" (click)="onEditTask()">Add Task</a>
+      <a class="btn-primary" (click)="onEditTask()">Update Task</a>
       <br /> <br />
   
     </form>

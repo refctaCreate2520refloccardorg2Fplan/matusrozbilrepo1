@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from '../tasklist/task.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TaskDetailDTO } from './TaskDetailDTO';
 
 
 @Component({
@@ -14,29 +15,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class TaskdetailComponent {
   //sorry, to je dočasne
-  UpdateINFO: any;
-
-  constructor(private route: ActivatedRoute,
-    private taskService: TaskService,
-    @Inject('BASE_URL') baseUrl: string){
-
-  }
-
-  updName: string = "no data";
-  updDescription: string = "no data";
-  updPriority: number = 0;
-  updDeadline: Date ;
-
-  ngOnInit(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id'));
-    this.taskService.getTaskDetails(id).subscribe(thtask => this.thtask.set(thtask));
-  };
-
   
-  thtask = signal<TaskDetailDTO>(undefined);
-
-
-
+  UpdateINFO: any;
   updateForm = new FormGroup(
     {
       name: new FormControl(''),
@@ -44,6 +24,25 @@ export class TaskdetailComponent {
       priority: new FormControl(null),
       deadline: new FormControl(null),
     })
+
+  constructor(private route: ActivatedRoute,
+    private taskService: TaskService,
+    @Inject('BASE_URL') baseUrl: string){
+
+  }
+
+  ngOnInit(): void {
+    const id = parseInt(this.route.snapshot.paramMap.get('id'));
+    this.taskService.getTaskDetails(id).subscribe(thtask => {
+      // this.thtask.set(thtask);
+      this.updateForm.patchValue({
+        name: thtask.name,
+        description: thtask.description,
+        priority: thtask.priority,
+        deadline: thtask.deadline
+      });
+    });
+  };
     /*      name: new FormControl(this.thtask().name, Validators.required),
       description: new FormControl(this.thtask().description, Validators.required),
       priority: new FormControl(this.thtask().priority, Validators.required),
@@ -52,11 +51,15 @@ export class TaskdetailComponent {
 
 onEditTask() {
     this.taskService.EditTask({
-      updName: this.updateForm.controls['name'].value,
-      updDescription: this.updateForm.controls['description'].value,
-      updPriority: this.updateForm.controls['priority'].value,
-      updDeadline: this.updateForm.controls['deadline'].value,
-    }).subscribe(UpdateINFO => this.UpdateINFO.set(UpdateINFO));
+      name: this.updateForm.controls['name'].value,
+      description: this.updateForm.controls['description'].value,
+      priority: this.updateForm.controls['priority'].value,
+      deadline: this.updateForm.controls['deadline'].value,
+      id: parseInt(this.route.snapshot.paramMap.get('id'))
+    }).subscribe({
+      next: (response) => {},
+      error: (er) => {console.log(er)}
+    });
   };
 }
 
@@ -68,11 +71,5 @@ export interface TaskUpdateDTO {
  updDeadline: Date;
 }
 
-export interface TaskDetailDTO {
-  name: string;
-  description: string;
-  priority: number;
-  isDone: boolean;
-  dateTime: Date;
-}
+
 

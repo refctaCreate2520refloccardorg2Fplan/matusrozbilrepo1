@@ -18,7 +18,7 @@ export class TaskService {
     return this.http.get<TaskDetailDTO>(this.baseUrl + "/taskdetail/" + id);
   }
 
-  EditTask(task: TaskUpdateDTO) {
+  EditTask(task: TaskDetailDTO) {
     return this.http.put<TaskDetailDTO>(this.baseUrl + '/editTask', task);
   }
   
