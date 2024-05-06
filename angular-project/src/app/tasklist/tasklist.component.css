@@ -132,3 +132,10 @@ button:focus {
  margin-top: 4vw;
 }
 
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}

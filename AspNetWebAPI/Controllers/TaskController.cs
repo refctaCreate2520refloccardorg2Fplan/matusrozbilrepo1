@@ -3,6 +3,7 @@ using AspNetCoreAPI.DTO;
 using AspNetCoreAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace HorizonTask.Controllers
@@ -49,6 +50,16 @@ namespace HorizonTask.Controllers
             _context.Add(taskCreate);
             _context.SaveChanges();
             return task;
+        }
+
+        [HttpDelete]
+        [Route("tasklist")]
+        public TasksDTO deleteTask(int id)
+        {
+            var minus = _context.Tasks.Where(x => x.Id == id).Single();
+            _context.Remove(minus);
+            _context.SaveChanges();
+            return null;
         }
 
         [HttpGet]

@@ -1,30 +1,72 @@
 import { DatePipe, NgFor, NgIf, CommonModule} from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, Inject, signal, Injectable } from '@angular/core';
+import { Component, Inject, signal, Injectable, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, FormsModule, Validators, FormBuilder } from '@angular/forms';
 import { TaskService, CreateTaskDTO } from './task.service';
 import { Router, RouterModule, ActivatedRoute, RouterLink } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { TaskDetailDTO } from '../taskdetail/TaskDetailDTO';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { ViewChild } from '@angular/core';
+import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 
 @Component({
   selector: 'app-tasklist',
   standalone: true,
-  imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule, RouterLink],
+  imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule, RouterLink, MatTableModule, MatSortModule],
   templateUrl: './tasklist.component.html',
   styleUrl: './tasklist.component.css',
 
 })
-export class TasklistComponent {
+export class TasklistComponent implements AfterViewInit {
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'hotovo'];
+
+ sort: MatSort;
 
   constructor(
     private route: ActivatedRoute, http: HttpClient,
+    private _liveAnnouncer: LiveAnnouncer,
     private router: Router,
     private taskService: TaskService,
     @Inject("BASE_URL") baseUrl: string) {
     http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.TaskData = result; }, error => console.error(error));
+  }
+
+
+  ngAfterViewInit() {
+    this.TaskData.sort(function (a, b) {
+      if (a.name < b.name) { return -1; }
+      if (a.name > b.name) { return 1; }
+      return 0;
+    });
+
+        this.TaskData.sort(function (a, b) {
+      if (a.priority < b.priority) { return -1; }
+      if (a.priority > b.priority) { return 1; }
+      return 0;
+    });
+
+    this.TaskData.sort(function (a, b) {
+      if (a.id < b.id) { return -1; }
+      if (a.id > b.id) { return 1; }
+      return 0;
+    });
+
+  }
+
+  announceSortChange(sortState: Sort) {
+    // This example uses English messages. If your application supports
+    // multiple language, you would internationalize these strings.
+    // Furthermore, you can customize the message to add additional
+    // details about the values being sorted.
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared');
+    }
   }
 
   taskName: string = "no data";
@@ -96,3 +138,4 @@ export interface TasksDTO {
   isDone: boolean;
   deadline: Date;
 }
+
