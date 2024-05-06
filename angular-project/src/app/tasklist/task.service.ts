@@ -18,6 +18,12 @@ export class TaskService {
     return this.http.get<TaskDetailDTO>(this.baseUrl + "/taskdetail/" + id);
   }
 
+  deleteTask(id: number) {
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("id", id);
+    return this.http.delete(this.baseUrl + 'task/id', { params: queryParams });
+  }
+
   EditTask(task: TaskDetailDTO) {
     return this.http.put<TaskDetailDTO>(this.baseUrl + '/editTask', task);
   }

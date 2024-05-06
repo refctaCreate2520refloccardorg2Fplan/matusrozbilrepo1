@@ -6,6 +6,7 @@ import { TaskService, CreateTaskDTO } from './task.service';
 import { Router, RouterModule, ActivatedRoute, RouterLink } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { TaskDetailDTO } from '../taskdetail/TaskDetailDTO';
 
 
 @Component({
@@ -29,7 +30,8 @@ export class TasklistComponent {
   taskName: string = "no data";
   taskDescription: string = "no data";
   taskPriority: number = 0;
-  taskDeadline: Date ;
+  taskDeadline: Date;
+
 
   taskForm = new FormGroup(
     {
@@ -44,7 +46,9 @@ export class TasklistComponent {
   public TaskData: TasksDTO[] = [];
   // newTask = signal<TasksDTO>(undefined);
   taskINFO = signal<CreateTaskDTO>(undefined);
-  xd : boolean = false;
+  xd: boolean = false;
+  taskIdFromRoute: number = 0;
+  taskDetailInfo = signal<TaskDetailDTO>(undefined);
   onAddTask() {
     if (this.taskForm.valid) {
       this.taskService.createTask({
@@ -56,6 +60,9 @@ export class TasklistComponent {
     }
   }
 
+  onDelete() {
+    this.taskService.deleteTask(this.taskIdFromRoute);
+  }
 
   tglbtn() {
     var elem = document.getElementById("tglbttn");
@@ -72,6 +79,13 @@ export class TasklistComponent {
     }
           }
 
+
+  ngOnInit(): void {
+    const RouteParams = this.route.snapshot.paramMap;
+    this.taskIdFromRoute = Number(RouteParams.get('id'));
+    console.log(RouteParams);
+    this.taskService.getTaskDetails(this.taskIdFromRoute).subscribe(taskDetail => { this.taskDetailInfo.set(taskDetail); });
+  }
 }
 
 export interface TasksDTO {
