@@ -28,7 +28,7 @@
 </div>
 
 
-<div *ngIf="xd==true; else elseBlock">
+<!--<div *ngIf="xd==true; else elseBlock">
   <div>
     <table class="tablemain">
       <thead class="tbHead">
@@ -53,8 +53,8 @@
       </tbody>
     </table>
   </div>
-</div>
-<ng-template #elseBlock>
+</div>-->
+<!--<ng-template #elseBlock>
   <table class="tablemain">
     <thead class="tbHead">
       <tr>
@@ -74,7 +74,7 @@
     </tbody>
   </table>
 
-</ng-template>
+</ng-template>-->
 
 
 <div>
@@ -118,7 +118,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
         Click to dilit
       </th>
-      <td mat-cell type="button" (click)="onDelete()" *matCellDef="let TaskData"> X </td>
+      <td mat-cell id ="delBtn"  *matCellDef="let TaskData"> <button type="button" (click)="onDelete(TaskData.id)"> X </button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

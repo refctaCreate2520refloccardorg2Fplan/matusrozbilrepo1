@@ -34,8 +34,7 @@ export class TasklistComponent implements AfterViewInit {
     @Inject("BASE_URL") baseUrl: string) {
     http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.TaskData = result; }, error => console.error(error));
   }
-
-
+  deletni = signal<TaskDetailDTO>(undefined);
   ngAfterViewInit() {
     this.TaskData.sort(function (a, b) {
       if (a.name < b.name) { return -1; }
@@ -102,8 +101,10 @@ export class TasklistComponent implements AfterViewInit {
     }
   }
 
-  onDelete() {
-    this.taskService.deleteTask(this.taskIdFromRoute);
+  onDelete(id: number) {
+    
+    this.taskService.deleteTask(id).
+      subscribe();
   }
 
   tglbtn() {

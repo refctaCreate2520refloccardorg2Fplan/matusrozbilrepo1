@@ -53,8 +53,8 @@ namespace HorizonTask.Controllers
         }
 
         [HttpDelete]
-        [Route("tasklist")]
-        public TasksDTO deleteTask(int id)
+        [Route("/tasklist/{id:int}")]
+        public TasksDTO deleteTask([FromRoute] int id)
         {
             var minus = _context.Tasks.Where(x => x.Id == id).Single();
             _context.Remove(minus);
