@@ -5,4 +5,5 @@ export class TaskDetailDTO{
     priority: number;
     isDone?: boolean;
     deadline?: Date;
+    imgUrl?: string;
 }

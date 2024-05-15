@@ -2,8 +2,10 @@
 using AspNetCoreAPI.DTO;
 using AspNetCoreAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace HorizonTask.Controllers
@@ -92,11 +94,11 @@ namespace HorizonTask.Controllers
             var taskik = _context.Tasks.Where(x => x.Id == task.Id).Single();
             taskik.Name = task.Name;
             taskik.Description = task.Description;
-            
+
             taskik.Deadline = task.Deadline;
             taskik.Priority = task.Priority;
             _context.SaveChanges();
-           
+
             var editnuty = new TaskDetailDTO()
             {
                 Id = task.Id,
@@ -106,10 +108,19 @@ namespace HorizonTask.Controllers
                 Deadline = task.Deadline,
 
             };
-            return editnuty;
-            
-            
+            return editnuty; 
         }
 
-    }
+        [HttpPost]
+        [Route("/api/save-url")]
+        public string imgUrl(int id, string url) {
+            var task = _context.Tasks.FirstOrDefault(x => x.Id == id);
+            task.imageUrl = url;
+            _context.SaveChanges();
+            return url;
+                
+                
+        }             
+    }    
 }
+

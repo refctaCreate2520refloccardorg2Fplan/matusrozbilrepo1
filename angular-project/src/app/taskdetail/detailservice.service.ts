@@ -7,9 +7,9 @@ import { TaskDetailDTO } from './TaskDetailDTO';
 })
 export class DetailserviceService {
 
+ 
+
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {}
-
-
-
+ 
 }
 

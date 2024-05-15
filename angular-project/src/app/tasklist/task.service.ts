@@ -27,8 +27,12 @@ export class TaskService {
   EditTask(task: TaskDetailDTO) {
     return this.http.put<TaskDetailDTO>(this.baseUrl + '/editTask', task);
   }
-  
+
+  saveUrl(url: string, id: number) {
+    return this.http.post<{ url: string }>('/api/save-url', { url });
+  }
 }
+
 
 
 export interface TaskUpdateDTO {

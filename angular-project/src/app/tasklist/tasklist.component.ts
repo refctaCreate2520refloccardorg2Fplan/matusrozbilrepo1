@@ -19,7 +19,8 @@ import { SearchFilterPipe } from 'src/app/tasklist/search-filter.pipe';
   imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule, RouterLink, MatTableModule, MatSortModule, FormsModule],
   templateUrl: './tasklist.component.html',
   styleUrl: './tasklist.component.css',
-  providers : [SearchFilterPipe]
+  providers : [SearchFilterPipe],
+  styles: []
 })
 export class TasklistComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'hotovo'];
@@ -32,6 +33,7 @@ searchTerm: any;
     private _liveAnnouncer: LiveAnnouncer,
     private router: Router,
     private taskService: TaskService,
+
     @Inject("BASE_URL") baseUrl: string) {
     http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.TaskData = result; }, error => console.error(error));
   }
@@ -130,6 +132,8 @@ searchTerm: any;
     console.log(RouteParams);
     this.taskService.getTaskDetails(this.taskIdFromRoute).subscribe(taskDetail => { this.taskDetailInfo.set(taskDetail); });
   }
+
+
 }
 
 export interface TasksDTO {
