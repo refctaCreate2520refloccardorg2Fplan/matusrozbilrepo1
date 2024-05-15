@@ -11,20 +11,21 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { ViewChild } from '@angular/core';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-
+import { SearchFilterPipe } from 'src/app/tasklist/search-filter.pipe';
 
 @Component({
   selector: 'app-tasklist',
   standalone: true,
-  imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule, RouterLink, MatTableModule, MatSortModule],
+  imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule, RouterLink, MatTableModule, MatSortModule, FormsModule],
   templateUrl: './tasklist.component.html',
   styleUrl: './tasklist.component.css',
-
+  providers : [SearchFilterPipe]
 })
 export class TasklistComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'hotovo'];
 
  sort: MatSort;
+searchTerm: any;
 
   constructor(
     private route: ActivatedRoute, http: HttpClient,

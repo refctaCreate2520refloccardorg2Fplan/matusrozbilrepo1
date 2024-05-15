@@ -1,4 +1,8 @@
 <div>
+  <input [(ngModel)]="searchTerm" type="text" placeholder="Search task"  #filter />
+</div>
+
+<div>
   <form class="container" [formGroup]="taskForm" (ngSumbit)="onAddTask()">
 
     <label label-text for="">Task      </label><br />
@@ -79,15 +83,15 @@
 
 <div>
 
-  <table mat-table [dataSource]="TaskData" matSort (matSortChange)="announceSortChange($event)"
-         class="mat-elevation-z8">
+  <table mat-table [dataSource]="TaskData"  matSort (matSortChange)="announceSortChange($event)"  
+         class="mat-elevation-z8" >
 
     <!-- Position Column -->
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
         Database Item No.
       </th>
-      <td mat-cell *matCellDef="let TaskData"> {{TaskData.id}} </td>
+      <td mat-cell *matCellDef="let TaskData searchFilter: searchTerm;" > {{TaskData.id}} </td>
     </ng-container>
 
     <!-- Name Column -->
