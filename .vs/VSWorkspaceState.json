@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\angular-project",
+    "\\angular-project\\src",
+    "\\angular-project\\src\\app",
+    "\\angular-project\\src\\app\\dashboard",
+    "\\angular-project\\src\\app\\tasklist",
+    "\\AspNetWebAPI",
+    "\\AspNetWebAPI\\DTO",
+    "\\AspNetWebAPI\\Models"
+  ],
+  "SelectedNode": "\\AspNetWebAPI\\DTO\\CreateTaskDTO.cs",
+  "PreviewInSolutionExplorer": false
+}
