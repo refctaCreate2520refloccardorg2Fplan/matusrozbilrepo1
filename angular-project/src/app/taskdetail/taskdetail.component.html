@@ -28,7 +28,7 @@
       <br><br>
 
       <label label-text for="">Image url</label> <br>
-      <input type="text" class="form-control" formControlName="imgUrl">
+      <input type="text" class="form-control" formControlName="imageUrl">
       <br><br>
 
       <a class="btn-primary" (click)="onEditTask()">Update Task</a>
@@ -38,4 +38,9 @@
 
 
   </div>
-  <div> </div>
+  <div>
+    <p>
+    {{tasker.name}}
+  </p>
+  
+  </div>

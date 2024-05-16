@@ -29,7 +29,7 @@ const providers = [
 
 bootstrapApplication(AppComponent, {
     providers: [
-      providers,
+      providers,provideAnimations(),
       importProvidersFrom(BrowserModule, JwtModule.forRoot({
         config: {
           tokenGetter: tokenGetter,
@@ -48,4 +48,4 @@ bootstrapApplication(AppComponent, {
       ]), provideAnimationsAsync()
     ]
 })
-  .catch(err => console.error(err));
+  

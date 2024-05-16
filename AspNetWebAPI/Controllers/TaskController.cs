@@ -80,6 +80,7 @@ namespace HorizonTask.Controllers
                     Description = task.Description,
                     Priority = task.Priority,
                     Deadline = task.Deadline,
+                    ImageUrl = task.imageUrl
                 };
             }
             else
@@ -94,7 +95,7 @@ namespace HorizonTask.Controllers
             var taskik = _context.Tasks.Where(x => x.Id == task.Id).Single();
             taskik.Name = task.Name;
             taskik.Description = task.Description;
-
+            taskik.imageUrl = task.ImageUrl;
             taskik.Deadline = task.Deadline;
             taskik.Priority = task.Priority;
             _context.SaveChanges();
@@ -106,14 +107,14 @@ namespace HorizonTask.Controllers
                 Description = task.Description,
                 Priority = task.Priority,
                 Deadline = task.Deadline,
-
+                ImageUrl = task.ImageUrl,
             };
             return editnuty; 
         }
 
         [HttpPost]
-        [Route("/api/save-url")]
-        public string imgUrl(int id, string url) {
+        [Route("/save-url/{id:int}")]
+        public string imgUrl([FromRoute]int id, string url) {
             var task = _context.Tasks.FirstOrDefault(x => x.Id == id);
             task.imageUrl = url;
             _context.SaveChanges();

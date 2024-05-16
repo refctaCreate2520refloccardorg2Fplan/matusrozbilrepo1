@@ -7,13 +7,14 @@ import { TaskDetailDTO } from './TaskDetailDTO';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @Component({
   selector: 'app-taskdetail',
   standalone: true,
-  imports: [ReactiveFormsModule, BrowserModule,FormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule,FormsModule, HttpClientModule, CommonModule],
   templateUrl: './taskdetail.component.html',
   styleUrl: './taskdetail.component.css',
   providers: [TaskService],
@@ -34,7 +35,6 @@ export class TaskdetailComponent {
       imageUrl: new FormControl(''),
     })
 
-    
   storedImageUrl: string | null = null;
 
   constructor(private route: ActivatedRoute,
@@ -43,6 +43,7 @@ export class TaskdetailComponent {
     @Inject('BASE_URL') baseUrl: string){
 
   }
+  public tasker: TaskDetailDTO;
 
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -53,7 +54,7 @@ export class TaskdetailComponent {
         description: thtask.description,
         priority: thtask.priority,
         deadline: thtask.deadline,
-        imageUrl: thtask.imgUrl
+        imageUrl: thtask.imageUrl
       });
     });
   };
@@ -64,18 +65,20 @@ export class TaskdetailComponent {
 
      
 onEditTask() {
+  debugger
   const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.taskService.EditTask({
       name: this.updateForm.controls['name'].value,
       description: this.updateForm.controls['description'].value,
       priority: this.updateForm.controls['priority'].value,
       deadline: this.updateForm.controls['deadline'].value,
+      imageUrl: this.updateForm.controls['imageUrl'].value,
       id: parseInt(this.route.snapshot.paramMap.get('id'))
     }).subscribe({
       next: (response) => {},
       error: (er) => {console.log(er)}
     });  
-    this.taskService.saveUrl( this.updateForm.controls['imgUrl'].value, id).pipe(takeUntil(this.destroy$)).subscribe();
+    //this.taskService.saveUrl( this.updateForm.controls['imgUrl'].value, id).pipe(takeUntil(this.destroy$)).subscribe();
   };
 
   

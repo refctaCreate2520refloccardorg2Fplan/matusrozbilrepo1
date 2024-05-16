@@ -8,5 +8,6 @@
         public int Priority { get; set; }
         public bool IsDone { get; set; }
         public DateTime Deadline { get; set; }
+        public string? ImageUrl { get; set; }
     }
 }
