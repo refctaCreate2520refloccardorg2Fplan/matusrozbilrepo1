@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TasksDTO } from '../tasklist/tasklist.component';
 
 
 @Component({
@@ -43,12 +44,11 @@ export class TaskdetailComponent {
     @Inject('BASE_URL') baseUrl: string){
 
   }
-  public tasker: TaskDetailDTO;
 
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.taskService.getTaskDetails(id).subscribe(thtask => {
-      // this.thtask.set(thtask);
+      this.thtask.set(thtask);
       this.updateForm.patchValue({
         name: thtask.name,
         description: thtask.description,
@@ -63,9 +63,9 @@ export class TaskdetailComponent {
       priority: new FormControl(this.thtask().priority, Validators.required),
       deadline: new FormControl(this.thtask().dateTime, Validators.required),*/
 
+  thtask = signal<TaskDetailDTO>(undefined);
      
 onEditTask() {
-  debugger
   const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.taskService.EditTask({
       name: this.updateForm.controls['name'].value,
@@ -75,7 +75,7 @@ onEditTask() {
       imageUrl: this.updateForm.controls['imageUrl'].value,
       id: parseInt(this.route.snapshot.paramMap.get('id'))
     }).subscribe({
-      next: (response) => {},
+      next: (thtask) => {this.thtask.set(thtask)},
       error: (er) => {console.log(er)}
     });  
     //this.taskService.saveUrl( this.updateForm.controls['imgUrl'].value, id).pipe(takeUntil(this.destroy$)).subscribe();

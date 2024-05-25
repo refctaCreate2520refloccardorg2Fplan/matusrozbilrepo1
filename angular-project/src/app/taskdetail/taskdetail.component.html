@@ -38,9 +38,16 @@
 
 
   </div>
-  <div>
-    <p>
-    {{tasker.name}}
+<div>
+  <p>
+    {{thtask().name}}
   </p>
-  
-  </div>
+  <p>
+    {{thtask().description}}
+  </p>
+  <p>
+    {{thtask().priority}}
+  </p>
+  <img src="{{thtask().imageUrl}}" />
+
+</div>

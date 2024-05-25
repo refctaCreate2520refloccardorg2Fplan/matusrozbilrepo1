@@ -3,7 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\taskdetail",
     "\\src\\app\\tasklist"
   ],
+  "SelectedNode": "\\src\\app\\tasklist\\tasklist.component.ts",
   "PreviewInSolutionExplorer": false
 }
