@@ -13,10 +13,11 @@ import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { SearchFilterPipe } from 'src/app/tasklist/search-filter.pipe';
 
+
 @Component({
   selector: 'app-tasklist',
   standalone: true,
-  imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule, RouterLink, MatTableModule, MatSortModule, FormsModule],
+  imports: [NgFor, ReactiveFormsModule, DatePipe, NgIf, CommonModule, RouterLink, SearchFilterPipe, MatTableModule, MatSortModule, FormsModule],
   templateUrl: './tasklist.component.html',
   styleUrl: './tasklist.component.css',
   providers : [SearchFilterPipe],
@@ -25,8 +26,7 @@ import { SearchFilterPipe } from 'src/app/tasklist/search-filter.pipe';
 export class TasklistComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'hotovo'];
 
- sort: MatSort;
-searchTerm: any;
+searchTerm: string;
 
   constructor(
     private route: ActivatedRoute, http: HttpClient,
@@ -38,6 +38,7 @@ searchTerm: any;
     http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.TaskData = result; }, error => console.error(error));
   }
   deletni = signal<TaskDetailDTO>(undefined);
+
   ngAfterViewInit() {
     this.TaskData.sort(function (a, b) {
       if (a.name < b.name) { return -1; }
@@ -57,18 +58,6 @@ searchTerm: any;
       return 0;
     });
 
-  }
-
-  announceSortChange(sortState: Sort) {
-    // This example uses English messages. If your application supports
-    // multiple language, you would internationalize these strings.
-    // Furthermore, you can customize the message to add additional
-    // details about the values being sorted.
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
   }
 
   taskName: string = "no data";
@@ -106,8 +95,7 @@ searchTerm: any;
 
   onDelete(id: number) {
     
-    this.taskService.deleteTask(id).
-      subscribe();
+    this.taskService.deleteTask(id).subscribe();
   }
 
   tglbtn() {

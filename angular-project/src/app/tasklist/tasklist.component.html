@@ -32,101 +32,21 @@
 </div>
 
 
-<!--<div *ngIf="xd==true; else elseBlock">
-  <div>
-    <table class="tablemain">
-      <thead class="tbHead">
-        <tr>
-          <th class="tbHeadItem">Task</th>
-          <th class="tbHeadItem">Priority</th>
-          <th class="tbHeadItem">IsDone</th>
-          <th class="tbHeadItem">Deadline</th>
-        </tr>
-      </thead>
-      <tbody class="tbBody" *ngFor="let tasks of TaskData">
-        <tr *ngIf="tasks.isDone">
-          <td class="tbBodyItem">{{tasks.name}}</td>
-          <td class="tbBodyItem">
-            <button type="button" [routerLink]="['/taskdetail', tasks.id]">CLICK HETREE</button>
-          </td>
-          <td class="tbBodyItem">{{tasks.priority}}</td>
-          <td class="tbBodyItem">{{tasks.isDone}}</td>
-          <td class="tbBodyItem">{{tasks.deadline | date}}</td>
-          <td type="button" (click)="onDelete()" class="tbBodyItem">DELETE</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>-->
-<!--<ng-template #elseBlock>
-  <table class="tablemain">
-    <thead class="tbHead">
-      <tr>
-        <th class="tbHeadItem">Task</th>
-        <th class="tbHeadItem">Priority</th>
-        <th class="tbHeadItem">IsDone</th>
-        <th class="tbHeadItem">Deadline</th>
-      </tr>
+<div>
+  <table>
+    <thead>
+      <tr>Name</tr>
+      <tr>Priority</tr>
+      <tr>Deadline</tr>
+      <br />
     </thead>
-    <tbody class="tbBody" *ngFor="let tasks of TaskData">
-      <tr *ngIf="!tasks.isDone">
-        <td class="tbBodyItem" >{{tasks.name}}</td>
-        <td class="tbBodyItem">{{tasks.priority}}</td>
-        <td class="tbBodyItem">{{tasks.isDone}}</td>
-        <td class="tbBodyItem">{{tasks.deadline | date}}</td>
+    <tbody>
+      <tr *ngFor="let taski of TaskData | searchFilter: searchTerm; let i = index;">
+        <td type="button" [routerLink]="['/taskdetail', taski.id]">{{taski.name}} </td>
+        <td>{{taski.priority}}</td>
+        <td>{{taski.id}}</td>
       </tr>
     </tbody>
-  </table>
-
-</ng-template>-->
-
-
-<div>
-
-  <table mat-table [dataSource]="TaskData"  matSort (matSortChange)="announceSortChange($event)"  
-         class="mat-elevation-z8" >
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
-        Database Item No.
-      </th>
-      <td mat-cell *matCellDef="let TaskData  searchFilter: searchTerm;" > {{TaskData.id}} </td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
-        Name
-      </th>
-      <td mat-cell *matCellDef="let TaskData" type="button" [routerLink]="['/taskdetail', TaskData.id]"> {{TaskData.name}} </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
-        Priority
-      </th>
-      <td mat-cell *matCellDef="let TaskData"> {{TaskData.priority}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
-        Deadline
-      </th>
-      <td mat-cell *matCellDef="let TaskData"> {{TaskData.deadline | date}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="hotovo">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
-        Click to dilit
-      </th>
-      <td mat-cell id ="delBtn"  *matCellDef="let TaskData"> <button type="button" (click)="onDelete(TaskData.id)"> X </button></td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
 

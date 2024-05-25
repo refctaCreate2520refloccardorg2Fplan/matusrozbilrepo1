@@ -1,8 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform} from '@angular/core';
 import { TasksDTO } from '../tasklist/tasklist.component';
 
 @Pipe({
-  name: 'searchFilter'
+  name: 'searchFilter',
+  standalone: true,
 })
 export class SearchFilterPipe implements PipeTransform {
 
