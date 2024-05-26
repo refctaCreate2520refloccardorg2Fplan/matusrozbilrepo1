@@ -24,7 +24,6 @@ import { SearchFilterPipe } from 'src/app/tasklist/search-filter.pipe';
   styles: []
 })
 export class TasklistComponent implements AfterViewInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'hotovo'];
 
 searchTerm: string;
 

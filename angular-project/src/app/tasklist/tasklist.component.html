@@ -1,6 +1,3 @@
-<div>
-  <input [(ngModel)]="searchTerm" type="text" placeholder="Search task"  #filter />
-</div>
 
 <div>
   <form class="container" [formGroup]="taskForm" (ngSumbit)="onAddTask()">
@@ -31,20 +28,24 @@
   <a type="button" id="tglbttn" style="background-color: #F9DC5C; font-family: Unytour; color: #000;" (click)="tglbtn()">Show finished tasks</a>
 </div>
 
+<div>
+  <input [(ngModel)]="searchTerm" type="text" placeholder="Search task" #filter />
+</div>
 
 <div>
   <table>
     <thead>
-      <tr>Name</tr>
-      <tr>Priority</tr>
-      <tr>Deadline</tr>
-      <br />
+      <tr>
+        <th>Task</th>
+        <th>Priority</th>
+        <th>Deadline</th>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let taski of TaskData | searchFilter: searchTerm; let i = index;">
         <td type="button" [routerLink]="['/taskdetail', taski.id]">{{taski.name}} </td>
         <td>{{taski.priority}}</td>
-        <td>{{taski.id}}</td>
+        <td>{{taski.deadline}}</td>
       </tr>
     </tbody>
   </table>
