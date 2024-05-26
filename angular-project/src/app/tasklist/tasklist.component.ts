@@ -1,6 +1,6 @@
 import { DatePipe, NgFor, NgIf, CommonModule} from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, Inject, signal, Injectable, AfterViewInit } from '@angular/core';
+import { Component, Inject, signal, Injectable, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, FormsModule, Validators, FormBuilder } from '@angular/forms';
 import { TaskService, CreateTaskDTO } from './task.service';
 import { Router, RouterModule, ActivatedRoute, RouterLink } from '@angular/router';
@@ -34,12 +34,12 @@ searchTerm: string;
     private taskService: TaskService,
 
     @Inject("BASE_URL") baseUrl: string) {
-    http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.TaskData = result; }, error => console.error(error));
+    http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.TaskData.set(result) }, error => console.error(error));
   }
   deletni = signal<TaskDetailDTO>(undefined);
 
-  ngAfterViewInit() {
-    this.TaskData.sort(function (a, b) {
+ ngAfterViewInit() {
+   /* this.TaskData.sort(function (a, b) {
       if (a.name < b.name) { return -1; }
       if (a.name > b.name) { return 1; }
       return 0;
@@ -55,7 +55,7 @@ searchTerm: string;
       if (a.id < b.id) { return -1; }
       if (a.id > b.id) { return 1; }
       return 0;
-    });
+    });*/
 
   }
 
@@ -63,6 +63,7 @@ searchTerm: string;
   taskDescription: string = "no data";
   taskPriority: number = 0;
   taskDeadline: Date;
+  private unsubscribe$ = new Subject<void>();
 
 
   taskForm = new FormGroup(
@@ -75,7 +76,7 @@ searchTerm: string;
 
 
 
-  public TaskData: TasksDTO[] = [];
+  TaskData = signal<TasksDTO[]>([]);
   // newTask = signal<TasksDTO>(undefined);
   taskINFO = signal<CreateTaskDTO>(undefined);
   xd: boolean = false;
@@ -91,6 +92,9 @@ searchTerm: string;
       }).subscribe(TaskINFO => this.taskINFO.set(TaskINFO), this.router.navigate['/tasklist']);
     }
   }
+
+  private dataSubject = new Subject<[TaskDetailDTO]>();
+  data$ = this.dataSubject.asObservable();
 
   onDelete(id: number) {
     
@@ -117,7 +121,7 @@ searchTerm: string;
     const RouteParams = this.route.snapshot.paramMap;
     this.taskIdFromRoute = Number(RouteParams.get('id'));
     console.log(RouteParams);
-    this.taskService.getTaskDetails(this.taskIdFromRoute).subscribe(taskDetail => { this.taskDetailInfo.set(taskDetail); });
+    this.taskService.getTaskDetails(this.taskIdFromRoute).pipe(takeUntil(this.unsubscribe$)).subscribe(taskDetail => { this.taskDetailInfo.set(taskDetail); });
   }
 
 

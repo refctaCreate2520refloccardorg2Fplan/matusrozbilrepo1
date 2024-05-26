@@ -1,15 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\angular-project",
-    "\\angular-project\\src",
-    "\\angular-project\\src\\app",
-    "\\angular-project\\src\\app\\api-authorization",
-    "\\angular-project\\src\\app\\dashboard",
-    "\\angular-project\\src\\app\\main-nav",
-    "\\angular-project\\src\\app\\taskdetail",
-    "\\angular-project\\src\\app\\tasklist"
+    ""
   ],
-  "SelectedNode": "\\angular-project\\src\\styles.css",
+  "SelectedNode": "\\AspNetWebAPI.sln",
   "PreviewInSolutionExplorer": false
 }

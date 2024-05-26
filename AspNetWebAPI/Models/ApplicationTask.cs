@@ -12,6 +12,6 @@ namespace AspNetCoreAPI.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public bool IsDone { get; set; } = false;
         public DateTime Deadline { get; set; }
-        public string imageUrl { get; set; }
+        public string? imageUrl { get; set; }
     }
 }
