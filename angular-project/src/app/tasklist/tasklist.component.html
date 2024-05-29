@@ -42,7 +42,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let taski of TaskData() | searchFilter: searchTerm; let i = index;">
+      <tr *ngFor="let taski of taskData() | searchFilter: searchTerm; let i = index;">
         <td type="button" [routerLink]="['/taskdetail', taski.id]">{{taski.name}} </td>
         <td>{{taski.priority}}</td>
         <td>{{taski.deadline}}</td>
