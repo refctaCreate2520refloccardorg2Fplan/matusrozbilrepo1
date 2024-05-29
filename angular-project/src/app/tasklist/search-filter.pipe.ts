@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform} from '@angular/core';
-import { TasksDTO } from '../tasklist/tasklist.component';
+import { TasksDTO } from './task';
 
 @Pipe({
   name: 'searchFilter',

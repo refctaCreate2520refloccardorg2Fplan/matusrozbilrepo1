@@ -9,7 +9,6 @@ import { NgModule } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TasksDTO } from '../tasklist/tasklist.component';
 
 
 @Component({
@@ -23,11 +22,11 @@ import { TasksDTO } from '../tasklist/tasklist.component';
 })
 export class TaskdetailComponent {
   //sorry, to je dočasne
- 
+
   private destroy$ = new Subject<void>();
   UpdateINFO: any;
   updateForm = new FormGroup(
-  
+
     {
       name: new FormControl(''),
       description: new FormControl(''),
@@ -64,7 +63,7 @@ export class TaskdetailComponent {
       deadline: new FormControl(this.thtask().dateTime, Validators.required),*/
 
   thtask = signal<TaskDetailDTO>(undefined);
-     
+
 onEditTask() {
   const id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.taskService.EditTask({
@@ -77,11 +76,11 @@ onEditTask() {
     }).subscribe({
       next: (thtask) => {this.thtask.set(thtask)},
       error: (er) => {console.log(er)}
-    });  
+    });
     //this.taskService.saveUrl( this.updateForm.controls['imgUrl'].value, id).pipe(takeUntil(this.destroy$)).subscribe();
   };
 
-  
+
 }
 
 export interface TaskUpdateDTO {

@@ -24,23 +24,12 @@ namespace HorizonTask.Controllers
         [HttpGet]
         public IEnumerable<TasksDTO> GetTasksList()
         {
-            IEnumerable<ApplicationTask> Tasks = _context.Tasks;
-            return Tasks.Select(Tasks => new TasksDTO
-            {
-                Id = Tasks.Id,
-                Name = Tasks.Name,
-                Description = Tasks.Description,
-                Priority = Tasks.Priority,
-                IsDone = Tasks.IsDone,
-                Deadline = Tasks.Deadline,
-            }
-            );
+            return _context.Tasks.Select(mapToTaskDto);
         }
 
         [HttpPut]
         [Route("/tasklist")]
-
-        public CreateTaskDTO createNewTask(CreateTaskDTO task)
+        public TasksDTO createNewTask(CreateTaskDTO task)
         {
             var taskCreate = new ApplicationTask()
             {
@@ -51,7 +40,19 @@ namespace HorizonTask.Controllers
             };
             _context.Add(taskCreate);
             _context.SaveChanges();
-            return task;
+            return mapToTaskDto(taskCreate);
+        }
+
+        private TasksDTO mapToTaskDto(ApplicationTask taskCreate)
+        {
+            return new TasksDTO { 
+                Id = taskCreate.Id,
+                Description = taskCreate.Description,
+                Deadline= taskCreate.Deadline,
+                IsDone = taskCreate.IsDone,
+                Name = taskCreate.Name,
+                Priority = taskCreate.Priority,
+            };
         }
 
         [HttpDelete]
