@@ -53,3 +53,35 @@
     a:focus-visible {
       outline-offset: 1px;
     }
+
+.image-canvas {
+  height: 30vw;
+  width: 30vw;
+  border: dashed;
+  border-width: 9px;
+  border-color: #ff6666;
+}
+
+.page-border {
+  margin-left: 3vw;
+  margin-top: 2vw;
+  font-family: Unytour;
+}
+
+.task-name {
+  font-size: 5vw;
+  margin-bottom: 3vw;
+  text-decoration: underline;
+}
+
+.task-description {
+  font-size: 2vw;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+
+.task-priority {
+  font-size: 1.5vw;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}

@@ -1,53 +1,45 @@
-<p>taskdetail works!</p>
 
-<!-- @if (thtask()) {
-    <div>
-        <p> {{thtask().name}}</p>
-        <p> {{thtask().description}}</p>
-        <p> {{thtask().priority}}</p>
-    </div>
-} -->
-
-<div >
-    <form class="container" [formGroup]="updateForm" (ngSumbit)="onEditTask()">
-  
-      <label label-text for="">Task      </label><br />
-      <input class="form-control" type="text" formControlName="name">
-      <br /> <br />
-  
-      <label label-text for="">Description      </label><br />
-      <input type="text" class="form-control" formControlName="description">
-      <br /> <br />
-  
-      <label label-text for="">Priority</label> <br>
-      <input type="number" class="form-control" formControlName="priority" min="0" max="5">
-      <br /> <br />
-  
-      <label label-text for="">Deadline</label> <br>
-      <input type="date" class="form-control" formControlName="deadline">
-      <br><br>
-
-      <label label-text for="">Image url</label> <br>
-      <input type="text" class="form-control" formControlName="imageUrl">
-      <br><br>
-
-      <a class="btn-primary" (click)="onEditTask()">Update Task</a>
-      <br /> <br />
-  
-    </form>
-
-
-  </div>
-<div>
-  <p>
+<div class="page-border">
+  <div class="task-name">
     {{thtask().name}}
-  </p>
-  <p>
+  </div>
+  <div class="task-description">
     {{thtask().description}}
-  </p>
-  <p>
+  </div>
+  <div class="task-priority">
     {{thtask().priority}}
-  </p>
-  <img src="{{thtask().imageUrl}}" />
+  </div>
+  <img class="image-canvas" src="{{thtask().imageUrl}}" />
+
+</div>
+
+<div class="page-border">
+  <form class="container" [formGroup]="updateForm" (ngSumbit)="onEditTask()">
+
+    <label label-text for="">Task      </label><br />
+    <input class="form-control" type="text" formControlName="name">
+    <br /> <br />
+
+    <label label-text for="">Description      </label><br />
+    <input type="text" class="form-control" formControlName="description">
+    <br /> <br />
+
+    <label label-text for="">Priority</label> <br>
+    <input type="number" class="form-control" formControlName="priority" min="0" max="5">
+    <br /> <br />
+
+    <label label-text for="">Deadline</label> <br>
+    <input type="date" class="form-control" formControlName="deadline">
+    <br><br>
+
+    <label label-text for="">Image url</label> <br>
+    <input type="text" class="form-control" formControlName="imageUrl">
+    <br><br>
+
+    <a class="btn-primary" (click)="onEditTask()">Update Task</a>
+    <br /> <br />
+
+  </form>
+
 
 </div>

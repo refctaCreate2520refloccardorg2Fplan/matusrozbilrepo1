@@ -46,6 +46,7 @@
         <td type="button" [routerLink]="['/taskdetail', taski.id]">{{taski.name}} </td>
         <td>{{taski.priority}}</td>
         <td>{{taski.deadline}}</td>
+        <td><button type="button" (click)="onDelete(taski.id)"> X </button></td>
       </tr>
     </tbody>
   </table>
