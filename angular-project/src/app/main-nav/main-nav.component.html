@@ -1,8 +1,11 @@
 <mat-toolbar>
   <ul>
     <li> <a>My web app</a></li>
-    </ul>
-    <span class="spacer"></span>
+  </ul>
+  <span class="spacer"></span>
+  <button class="button-30" role="button"> {{ time | date:'hh:mm:ss a' }}</button>
+  <span class="spacer"></span>
+
   <ul>
     @if (authService.authenticated()) {
     <li> <a nav-button-right style="float:left" [routerLink]="['/tasklist']">Tasks</a> </li>

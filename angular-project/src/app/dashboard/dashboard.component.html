@@ -1,12 +1,6 @@
 <div>
-  <h2>Hello! You can only see this if you're logged in!</h2>
-  <table mat-table *ngIf="dataSource" [dataSource]="dataSource">
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let member"> {{ member }} </td>
+  <h2>tajm is: </h2>
 
-      <tr mat-header-row *matHeaderRowDef="['name',]"></tr>
-      <tr mat-row *matRowDef="let row; columns: ['name'];"></tr>
-    </ng-container>
-  </table>
+  <div >{{ time | date:'hh:mm:ss a' }}</div>
+
 </div>
