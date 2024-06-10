@@ -1,11 +1,21 @@
 mat-toolbar {
   backdrop-filter: blur(7px);
+  height: 4vw;
     background-color:#2121212a;
   a {
   margin-left: auto;
     }
 }
 
+.xname {
+  color: #ff6666;
+  font-family: Unytour;
+  font-size: 2vw;
+  transform: rotate(5deg);
+  overflow: visible;
+  margin-top: 2vw;
+  backdrop-filter: sepia(70%);
+}
 
 
 a {
