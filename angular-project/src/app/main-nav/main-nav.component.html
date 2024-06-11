@@ -1,6 +1,6 @@
 <mat-toolbar>
   <ul>
-    <li role="button" [routerLink]="['/dashboard']" class="xname"> <p [routerLink]="['/dashboard']">HorizonTasks</p></li>
+    <li role="button" [routerLink]="['/']" class="xname"> <p [routerLink]="['/dashboard']">HorizonTasks</p></li>
   </ul>
   <span class="spacer"></span>
   <button class="button-30" role="button"> {{ time | date:'hh:mm:ss a' }}</button>
@@ -8,11 +8,11 @@
 
   <ul>
     @if (authService.authenticated()) {
-    <li> <a nav-button-right style="float:left" [routerLink]="['/tasklist']">Tasks</a> </li>
+    <li> <a nav-button-right style="float: left; background-color: #8ed6f6;" [routerLink]="['/tasklist']">Tasks</a> </li>
 
     <li style="float:right"> <a nav-button-right (click)="logout()">Logout</a> </li>
     } @else {
-    <li style="float:right"> <a [routerLink]="['/login']">Login</a> </li>
+    <li style="float:right"> <a style="background-color: #b9f68e; " [routerLink]="['/login']">Login</a> </li>
     <li style="float:right"><a [routerLink]="['/register']">Registration</a></li>
     }
   </ul>

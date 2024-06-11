@@ -1,7 +1,6 @@
 div {
-  margin: auto;
-  margin-top: 80px;
-margin-left: 70px;
+  margin-top: 6vw;
+margin-left: 5vw;
 }
 
 .txt1 {
@@ -15,6 +14,13 @@ margin-left: 70px;
   font-size: 2.5vw;
   padding-left: 0.5vw;
   margin: 4vw 2vw 2vw 0vw;
+}
+
+.txtbtn {
+  font-family: Unytour;
+  font-size: 6vw;
+  margin: 8vw 0vw 0vw 0vw;
+  padding-top: 3vw;
 }
 
 .wht {

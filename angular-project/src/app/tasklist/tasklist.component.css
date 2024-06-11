@@ -107,37 +107,36 @@ button:focus {
   font-family: Unytour;
   padding: 0.6vw;
   padding-left: 1.5vw;
-  font-size: 1.5vw;
+  font-size: 2vw;
 }
 
 .tbHeadItem {
   font-family: Unytour;
-  padding: 0.6vw;
-  padding-top: 1.5vw;
-  padding-bottom: 1.5vw;
-  padding-left: 1.5vw;
+  margin-bottom: 4vw;
+  padding-bottom: 2vw;
+  font-size: 2vw;
 }
 
 .tbHead {
   font-family: Unytour;
-  height: 25%;
+  height: 10vw;
   top: 0;
   bottom: 0;
   left: 0;
-  font-size: 2em;
+  font-size: 2vw;
   
 }
 
 .tbBody {
-  font-family: Unytour;
-  height: 75%;
+  height: 2.5vw;
   color: rgb(255, 222, 227);
+  font-size: 1.3vw;
+  margin: 1vw 0vw 1vw 0vw;
 }
 
 .tablemain {
   font-family: Unytour;
   margin-left: 3vw;
- width: 94%;
  border-radius: 20px;
  backdrop-filter: blur(5px);
  background-color:#212121a8;
@@ -152,4 +151,9 @@ table {
 
 th.mat-sort-header-sorted {
   color: black;
+}
+
+
+.tabb {
+    margin: 1vw;
 }

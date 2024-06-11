@@ -5,12 +5,14 @@ import { MatList, MatListItem } from '@angular/material/list';
 import { MatCell, MatCellDef, MatColumnDef, MatHeaderCell, MatHeaderCellDef, MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef, MatTable, MatTableDataSource } from '@angular/material/table';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Subject, Subscription, takeUntil, timer } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
     NgIf,
+    RouterLink,
     CommonModule,
     AsyncPipe,
     MatList,

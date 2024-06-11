@@ -10,17 +10,17 @@
 <br />
 
 
-<div>
+<div class="tabb">
   <table>
     <thead>
       <tr>
-        <th>Task</th>
-        <th>Priority</th>
-        <th>Deadline</th>
+        <th class="tbHeadItem">Task</th>
+        <th class="tbHeadItem">Priority</th>
+        <th class="tbHeadItem">Deadline</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let taski of taskData() | searchFilter: searchTerm; let i = index;">
+    <tbody class="tbBody">
+      <tr class="tbBody" *ngFor="let taski of taskData() | searchFilter: searchTerm; let i = index;">
         <td type="button" [routerLink]="['/taskdetail', taski.id]">{{taski.name}} </td>
         <td>{{taski.priority}}</td>
         <td>{{taski.deadline | date:'d.M  yyyy' }}</td>
@@ -35,11 +35,11 @@
 <br>
 <br>
 <br>
-
+<!--
 <div class="swcontainer">
   <a type="button" id="tglbttn" style="background-color: #F9DC5C; font-family: Unytour; color: #000;" (click)="tglbtn()">Show finished tasks</a>
 </div>
-
+  -->
 
 <div>
   <form class="container" [formGroup]="taskForm" (ngSumbit)="onAddTask()">
