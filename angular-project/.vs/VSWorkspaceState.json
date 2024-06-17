@@ -3,11 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\dashboard",
-    "\\src\\app\\main-nav",
-    "\\src\\app\\taskdetail",
     "\\src\\app\\tasklist"
   ],
-  "SelectedNode": "\\src\\app\\main-nav\\main-nav.component.css",
+  "SelectedNode": "\\src\\app\\tasklist\\tasklist.component.html",
   "PreviewInSolutionExplorer": false
 }

@@ -128,10 +128,12 @@ button:focus {
 }
 
 .tbBody {
-  height: 2.5vw;
   color: rgb(255, 222, 227);
   font-size: 1.3vw;
-  margin: 1vw 0vw 1vw 0vw;
+}
+
+.tbBodyItemm {
+
 }
 
 .tablemain {
@@ -156,4 +158,43 @@ th.mat-sort-header-sorted {
 
 .tabb {
     margin: 1vw;
+}
+
+
+
+
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+  background-color: rgb(255, 95, 95);
+  cursor: pointer;
+  border: 3px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+}
+
+.bin-bottom {
+  width: 15px;
+}
+
+.bin-top {
+  width: 17px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+}
+
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+.bin-button:active {
+  transform: scale(0.9);
 }
