@@ -11,7 +11,7 @@ mat-toolbar {
   color: #ff6666;
   font-family: Unytour;
   font-size: 2.7vw;
-  transform: rotate(5deg);
+  transform: rotate(3deg);
   overflow: visible;
   margin-top: 2vw;
 }

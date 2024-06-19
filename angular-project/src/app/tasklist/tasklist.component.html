@@ -14,18 +14,19 @@
   <table>
     <thead>
       <tr>
-        <th class="tbHeadItem">Task</th>
-        <th class="tbHeadItem">Priority</th>
-        <th class="tbHeadItem">Deadline</th>
+        <th class="tbHeadItem taskHead">Task</th>
+        <th class="tbHeadItem taskPriority">Priority</th>
+        <th class="tbHeadItem taskDeadline">Deadline</th>
+        <th class="tbHeadItem taskDelete"></th>
       </tr>
     </thead>
     <tbody class="tbBody">
-      <tr class="tbBodyItemm" style=" height: 1vw;" *ngFor="let taski of taskData() | searchFilter: searchTerm; let i = index;">
-        <td type="button" [routerLink]="['/taskdetail', taski.id]">{{taski.name}} </td>
-        <td>{{taski.priority}}</td>
-        <td>{{taski.deadline | date:'d.M  yyyy' }}</td>
-        <td>
-          <button style="transform:scale(60%);" type="button" (click)="onDelete(taski.id)" class="bin-button">
+      <tr class="tbBodyItemm" *ngFor="let taski of taskData() | searchFilter: searchTerm; let i = index;">
+        <td class="tableTaskName" type="button" [routerLink]="['/taskdetail', taski.id]">{{taski.name}} </td>
+        <td class="tableTaskPriority">{{taski.priority}}</td>
+        <td class="tableTaskDeadline">{{taski.deadline | date:'d.M  yyyy' }}</td>
+        <td class="tableTaskDelete">
+          <button style="transform:scale(100%);" type="button" (click)="onDelete(taski.id)" class="bin-button">
             <svg class="bin-top"
                  viewBox="0 0 39 7"
                  fill="none"

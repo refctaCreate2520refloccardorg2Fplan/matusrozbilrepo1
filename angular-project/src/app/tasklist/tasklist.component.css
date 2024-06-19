@@ -103,6 +103,21 @@ button:focus {
   outline-width: 3px;
 }
 
+.tabb {
+  background-color: rgba(0, 0, 0, 0.5); /* adjust the opacity to your liking */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+  .tabb table {
+    background-color: transparent;
+  }
+
+  .tabb th, .tabb td {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
 .tbBodyItem {
   font-family: Unytour;
   padding: 0.6vw;
@@ -112,8 +127,7 @@ button:focus {
 
 .tbHeadItem {
   font-family: Unytour;
-  margin-bottom: 4vw;
-  padding-bottom: 2vw;
+  padding: 1vw 2vw 1vw 2vw;
   font-size: 2vw;
 }
 
@@ -132,10 +146,6 @@ button:focus {
   font-size: 1.3vw;
 }
 
-.tbBodyItemm {
-
-}
-
 .tablemain {
   font-family: Unytour;
   margin-left: 3vw;
@@ -147,9 +157,7 @@ button:focus {
  margin-top: 4vw;
 }
 
-table {
-  width: 100%;
-}
+
 
 th.mat-sort-header-sorted {
   color: black;
@@ -160,7 +168,28 @@ th.mat-sort-header-sorted {
     margin: 1vw;
 }
 
+.taskHead {
+  width: 30vw;
+}
 
+.taskPriority {
+  width: 10vw;
+}
+
+.taskDeadline {
+  width: 20vw;
+}
+.taskDelete {
+  width: 0vw;
+}
+
+.tableTaskName{
+    padding-left:1vw;
+}
+
+.tableTaskPriority {
+    text-align: center;
+}
 
 
 .bin-button {
