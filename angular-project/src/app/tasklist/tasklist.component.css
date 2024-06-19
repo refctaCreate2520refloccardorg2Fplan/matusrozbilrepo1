@@ -169,7 +169,7 @@ th.mat-sort-header-sorted {
 }
 
 .taskHead {
-  width: 30vw;
+  width: 47vw;
 }
 
 .taskPriority {
@@ -177,7 +177,7 @@ th.mat-sort-header-sorted {
 }
 
 .taskDeadline {
-  width: 20vw;
+  width: 39vw;
 }
 .taskDelete {
   width: 0vw;
@@ -226,4 +226,67 @@ th.mat-sort-header-sorted {
 
 .bin-button:active {
   transform: scale(0.9);
+}
+
+
+.tabb {
+  display: table;
+  width: 98%;
+}
+
+.thead {
+  display: table-header-group;
+}
+
+.tbHeadItem {
+  display: inline-block;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tbBody {
+  display: table-row-group;
+}
+
+.tbBodyItemm {
+  display: table-row;
+}
+
+.tableTaskName, .tableTaskPriority, .tableTaskDeadline, .tableTaskDelete {
+  display: table-cell;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+  .tableTaskName{
+      width: 50vw;
+  }
+
+.tableTaskPriority {
+  width: 10vw;
+}
+
+.tableTaskDeadline {
+    width: 30vw;
+}
+
+.tableTaskDelete {
+    width: 10vw;
+}
+
+.jetogg {
+  width: 98%;
+}
+
+.tbBodyItemm {
+  display: inline-table;
+  width: 98vw;
+}
+
+
+.tableTaskName, .tableTaskPriority, .tableTaskDeadline, .tableTaskDelete {
+  flex: 1;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
 }

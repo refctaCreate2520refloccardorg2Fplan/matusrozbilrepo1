@@ -20,7 +20,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   providers : [SearchFilterPipe],
   styles: []
 })
-export class TasklistComponent implements AfterViewInit {
+export class TasklistComponent {
   destroyRef = inject(DestroyRef);
   searchTerm: string;
   taskData = signal<TasksDTO[]>([]);
@@ -41,27 +41,6 @@ export class TasklistComponent implements AfterViewInit {
     http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.taskData.set(result) }, error => console.error(error));
   }
   deletni = signal<TaskDetailDTO>(undefined);
-
- ngAfterViewInit() {
-   /* this.TaskData.sort(function (a, b) {
-      if (a.name < b.name) { return -1; }
-      if (a.name > b.name) { return 1; }
-      return 0;
-    });
-
-        this.TaskData.sort(function (a, b) {
-      if (a.priority < b.priority) { return -1; }
-      if (a.priority > b.priority) { return 1; }
-      return 0;
-    });
-
-    this.TaskData.sort(function (a, b) {
-      if (a.id < b.id) { return -1; }
-      if (a.id > b.id) { return 1; }
-      return 0;
-    });*/
-
-  }
 
   onAddTask() {
     if (this.taskForm.valid) {
