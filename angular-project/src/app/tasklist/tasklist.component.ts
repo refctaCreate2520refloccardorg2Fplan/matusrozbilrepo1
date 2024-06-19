@@ -10,6 +10,7 @@ import { MatTableModule } from '@angular/material/table';
 import { SearchFilterPipe } from 'src/app/tasklist/search-filter.pipe';
 import { TasksDTO } from './task';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-tasklist',
@@ -22,6 +23,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class TasklistComponent {
   destroyRef = inject(DestroyRef);
+  private destroy$ = new Subject<void>();
   searchTerm: string;
   taskData = signal<TasksDTO[]>([]);
   xd: boolean = false;
@@ -55,7 +57,8 @@ export class TasklistComponent {
   }
 
   onDelete(id: number) {
-    this.taskService.deleteTask(id).subscribe();
+    debugger
+    this.taskService.deleteTask(id).pipe(takeUntil(this.destroy$)).subscribe(result => this.taskData.set(null));
   }
 
   tglbtn() {
