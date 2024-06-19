@@ -9,7 +9,13 @@ import { TasksDTO } from './task';
   providedIn: 'root'
 })
 
+
+
 export class TaskService {
+
+  getTasks() {
+   return this.http.get<TasksDTO[]>(this.baseUrl + '/tasks');
+  }
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private route: ActivatedRoute) { }
 
   createTask(Task: CreateTaskDTO) {
@@ -31,6 +37,8 @@ export class TaskService {
   }
 
 }
+
+
 
 
 

@@ -56,10 +56,12 @@ export class TasklistComponent {
     }
   }
 
+
   onDelete(id: number) {
-    debugger
-    this.taskService.deleteTask(id).pipe(takeUntil(this.destroy$)).subscribe(result => this.taskData.set(null));
-  }
+    this.taskService.deleteTask(id).pipe(takeUntil(this.destroy$)).subscribe(() => this.taskData.update(tasks => tasks.filter(task => task.id !== id)));
+  } 
+
+ 
 
   tglbtn() {
     var elem = document.getElementById("tglbttn");
