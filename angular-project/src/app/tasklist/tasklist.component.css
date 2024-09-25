@@ -5,11 +5,11 @@
 
 .serchik {
   width: 30vw;
-  backdrop-filter: blur(7px);
-  background-color: #2121212a;
+  background-color: #f1f1f1;
   border-radius: 24px;
-  color: azure;
-  border-color: #ff6666;
+  color: black;
+  border-color: black;
+  border-width: 0.2vw;
 }
 
 .lajnapy {
@@ -30,7 +30,7 @@
 }
 
 .form-control {
-  border-color: #ff6666;
+  border-color: black;
   border-width: 2px;
   text-align: center;
   background-color: transparent;
@@ -38,7 +38,7 @@
   height: 3vw;
   margin: 0.7vw;
   display:inline;
-  color: white;
+  color: black;
   border-radius: 10px;
 }
 
@@ -56,17 +56,20 @@ form {
   font-family: Unytour;
   margin-bottom: 2vw;
   border-radius: 20px;
+  border-color: black;
+  border-width: 1vw;
+  border: solid;
   backdrop-filter: blur(4px);
-  background-color:#21212140;
+  background-color: transparent;
   font-size: 2vw;
-  color: #ff6666;
+  color: black;
 }
 
 a {
   outline: 0;
   grid-gap: 8px;
   align-items: center;
-  background-color: #a0b2ff;
+  background-color: #f1f1f1;
   color: #000;
   border: 1px solid #000;
   border-radius: 4px;
@@ -104,7 +107,7 @@ button:focus {
 }
 
 .tabb {
-  background-color: rgba(0, 0, 0, 0.5); /* adjust the opacity to your liking */
+  background-color: rgba(0, 0, 0, 0); /* adjust the opacity to your liking */
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -142,19 +145,19 @@ button:focus {
 }
 
 .tbBody {
-  color: rgb(255, 222, 227);
+  color: black;
   font-size: 1.3vw;
 }
 
 .tablemain {
   font-family: Unytour;
   margin-left: 3vw;
- border-radius: 20px;
- backdrop-filter: blur(5px);
- background-color:#212121a8;
- border-bottom-width: 20px;
- border-bottom-style: solid;
- margin-top: 4vw;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  background-color: #f1f1f1;
+  border-bottom-width: 20px;
+  border-bottom-style: solid;
+  margin-top: 4vw;
 }
 
 

@@ -14,12 +14,10 @@ mat-toolbar {
 }
 
 .xname {
-  color: #ff6666;
+  color: #ffffff;
   font-family: Unytour;
   font-size: 2.7vw;
-  transform: rotate(3deg);
-  overflow: visible;
-  margin-top: 2vw;
+  margin-top: 0.5vw;
 }
 
 

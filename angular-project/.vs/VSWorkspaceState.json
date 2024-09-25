@@ -3,7 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\tasklist"
+    "\\src\\app\\tasklist",
+    "\\src\\assets"
   ],
+  "SelectedNode": "\\src\\styles.css",
   "PreviewInSolutionExplorer": false
 }
