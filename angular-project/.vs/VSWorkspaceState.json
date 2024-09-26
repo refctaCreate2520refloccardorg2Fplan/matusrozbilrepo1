@@ -3,9 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\api-authorization",
+    "\\src\\app\\api-authorization\\login",
     "\\src\\app\\tasklist",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\styles.css",
+  "SelectedNode": "\\src\\assets\\png.png",
   "PreviewInSolutionExplorer": false
 }

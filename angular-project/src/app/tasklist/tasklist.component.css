@@ -109,6 +109,7 @@ button:focus {
 .tabb {
   background-color: rgba(0, 0, 0, 0); /* adjust the opacity to your liking */
   border-radius: 20px;
+  backdrop-filter: blur(2px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
