@@ -15,7 +15,7 @@ mat-toolbar {
 
 .xname {
   color: #ffffff;
-  font-family: Unytour;
+  font-family: Flex;
   font-size: 2.7vw;
   margin-top: 0.5vw;
 }
@@ -23,7 +23,7 @@ mat-toolbar {
 
 a {
   outline: 0;
-  font-family: Unytour;
+  font-family: Flex;
   grid-gap: 1vw;
   align-items: center;
   background-color: #ff6666;
@@ -89,7 +89,7 @@ li {
   color: #36395A;
   cursor: pointer;
   display: inline-flex;
-  font-family: Unytour;
+  font-family: Flex;
   height: 3vw;
   justify-content: center;
   line-height: 1;

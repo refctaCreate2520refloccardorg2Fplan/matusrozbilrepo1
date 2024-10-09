@@ -1,6 +1,6 @@
 @font-face {
-  font-family: Unytour;
-  src: url('..\..\assets\unytour-semiboldcondensed.otf');
+  font-family: Flux;
+  src: url('..\..\assets\AfacadFlux-Regular.ttf');
 }
 
 .container {
@@ -65,7 +65,7 @@
 .page-border {
   margin-left: 3vw;
   margin-top: 4vw;
-  font-family: Unytour;
+  font-family: Flux;
 }
 
 .task-name {

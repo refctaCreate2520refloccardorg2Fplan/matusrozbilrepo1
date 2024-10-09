@@ -2,12 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\api-authorization",
-    "\\src\\app\\api-authorization\\login",
-    "\\src\\app\\tasklist",
-    "\\src\\assets"
+    "\\src\\app"
   ],
-  "SelectedNode": "\\src\\assets\\png.png",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

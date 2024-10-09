@@ -1,7 +1,8 @@
 @font-face {
-  font-family: Unytour;
-  src: url('..\..\assets\unytour-semiboldcondensed.otf');
+  font-family: Flux;
+  src: url('..\..\assets\AfacadFlux-Regular.ttf');
 }
+
 
 .serchik {
   width: 30vw;
@@ -53,7 +54,7 @@ form {
   padding-top: 2vw;
   margin-top: 3vw;
   text-align: center;
-  font-family: Unytour;
+  font-family: Flux ;
   margin-bottom: 2vw;
   border-radius: 20px;
   border-color: black;
@@ -123,20 +124,20 @@ button:focus {
   }
 
 .tbBodyItem {
-  font-family: Unytour;
+  font-family: Flux;
   padding: 0.6vw;
   padding-left: 1.5vw;
   font-size: 2vw;
 }
 
 .tbHeadItem {
-  font-family: Unytour;
+  font-family: Flux;
   padding: 1vw 2vw 1vw 2vw;
   font-size: 2vw;
 }
 
 .tbHead {
-  font-family: Unytour;
+  font-family: Flux;
   height: 10vw;
   top: 0;
   bottom: 0;
@@ -151,7 +152,7 @@ button:focus {
 }
 
 .tablemain {
-  font-family: Unytour;
+  font-family: Flux;
   margin-left: 3vw;
   border-radius: 20px;
   backdrop-filter: blur(5px);
