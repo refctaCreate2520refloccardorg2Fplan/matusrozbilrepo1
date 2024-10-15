@@ -3,8 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\angular.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:angular.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\test.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\test.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\test.service.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\test.service.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\tsconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tsconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\firebase.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:firebase.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\tsconfig.app.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tsconfig.app.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\tasklist\\tasklist.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -26,24 +62,145 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "test.service.ts",
+              "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\test.service.ts",
+              "RelativeDocumentMoniker": "src\\app\\test.service.ts",
+              "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\test.service.ts",
+              "RelativeToolTip": "src\\app\\test.service.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-10-10T06:36:03.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "test.service.spec.ts",
+              "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\test.service.spec.ts",
+              "RelativeDocumentMoniker": "src\\app\\test.service.spec.ts",
+              "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\test.service.spec.ts",
+              "RelativeToolTip": "src\\app\\test.service.spec.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-10-10T06:35:56.581Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "main.ts",
+              "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\main.ts",
+              "RelativeDocumentMoniker": "src\\main.ts",
+              "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\main.ts",
+              "RelativeToolTip": "src\\main.ts",
+              "ViewState": "AgIAADEAAAAAAAAAAAAQwDYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-10-10T06:33:54.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\package.json",
+              "RelativeDocumentMoniker": "package.json",
+              "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\package.json",
+              "RelativeToolTip": "package.json",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-10T06:29:22.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\index.html",
+              "RelativeDocumentMoniker": "src\\index.html",
+              "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\index.html",
+              "RelativeToolTip": "src\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-10-10T06:13:20.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "app.component.ts",
+              "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\app.component.ts",
+              "RelativeDocumentMoniker": "src\\app\\app.component.ts",
+              "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\app.component.ts",
+              "RelativeToolTip": "src\\app\\app.component.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-10-10T06:08:08.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "tsconfig.json",
+              "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\tsconfig.json",
+              "RelativeDocumentMoniker": "tsconfig.json",
+              "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\tsconfig.json",
+              "RelativeToolTip": "tsconfig.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-10T06:07:44.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "tsconfig.app.json",
+              "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\tsconfig.app.json",
+              "RelativeDocumentMoniker": "tsconfig.app.json",
+              "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\tsconfig.app.json",
+              "RelativeToolTip": "tsconfig.app.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-10T06:07:40.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "angular.json",
+              "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\angular.json",
+              "RelativeDocumentMoniker": "angular.json",
+              "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\angular.json",
+              "RelativeToolTip": "angular.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-10T06:04:12.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "firebase.json",
               "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\firebase.json",
               "RelativeDocumentMoniker": "firebase.json",
               "ToolTip": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\firebase.json",
               "RelativeToolTip": "firebase.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-09T19:43:21.206Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "dashboard.component.css",
               "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\dashboard\\dashboard.component.css",
               "RelativeDocumentMoniker": "src\\app\\dashboard\\dashboard.component.css",
@@ -51,12 +208,11 @@
               "RelativeToolTip": "src\\app\\dashboard\\dashboard.component.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-09T19:15:55.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T19:15:55.113Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "taskdetail.component.css",
               "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\taskdetail\\taskdetail.component.css",
               "RelativeDocumentMoniker": "src\\app\\taskdetail\\taskdetail.component.css",
@@ -64,16 +220,11 @@
               "RelativeToolTip": "src\\app\\taskdetail\\taskdetail.component.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-09T19:11:52.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "WhenOpened": "2024-10-09T19:11:52.906Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "tasklist.component.css",
               "DocumentMoniker": "C:\\Users\\jantu\\source\\repos\\matusrozbilrepo1\\angular-project\\src\\app\\tasklist\\tasklist.component.css",
               "RelativeDocumentMoniker": "src\\app\\tasklist\\tasklist.component.css",
@@ -81,8 +232,7 @@
               "RelativeToolTip": "src\\app\\tasklist\\tasklist.component.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-25T19:09:58.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-25T19:09:58.313Z"
             }
           ]
         }
