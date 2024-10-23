@@ -25,8 +25,8 @@ namespace HorizonTask.Controllers
         [HttpGet]
         public IEnumerable<TasksDTO> GetTasksList()
         {
-            return _context.Tasks.Select(mapToTaskDto);
-            //return _context.Tasks.Where(x => x.UserId == GetCurrentUser().Id).Select(mapToTaskDto);
+            //return _context.Tasks.Select(mapToTaskDto);
+            return _context.Tasks.Where(x => x.UserId == GetCurrentUser().Id).Select(mapToTaskDto);
         }
 
         [HttpPut]
