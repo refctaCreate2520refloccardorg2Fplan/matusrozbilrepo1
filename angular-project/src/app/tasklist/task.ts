@@ -5,4 +5,5 @@ export interface TasksDTO {
   priority: number;
   isDone: boolean;
   deadline: Date;
+  userId: string;
 }

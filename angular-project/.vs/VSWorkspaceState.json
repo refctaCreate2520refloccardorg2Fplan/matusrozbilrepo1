@@ -3,10 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\api-authorization",
+    "\\src\\app\\api-authorization\\login",
+    "\\src\\app\\api-authorization\\registration",
+    "\\src\\app\\dashboard",
     "\\src\\app\\taskdetail",
     "\\src\\app\\tasklist",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\tasklist\\tasklist.component.css",
   "PreviewInSolutionExplorer": false
 }

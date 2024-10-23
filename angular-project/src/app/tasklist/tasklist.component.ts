@@ -40,7 +40,7 @@ export class TasklistComponent {
     private taskService: TaskService,
 
     @Inject("BASE_URL") baseUrl: string) {
-    http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.taskData.set(result) }, error => console.error(error));
+    http.get<TasksDTO[]>(baseUrl + '/tasks').subscribe(result => { this.taskData.set(result) }, error => console.error(error.message));
   }
   deletni = signal<TaskDetailDTO>(undefined);
 
@@ -78,4 +78,5 @@ export class TasklistComponent {
     }
   }
 }
+
 

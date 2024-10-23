@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreAPI.Controllers
 {
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Route("[controller]")]
     public class HomeController : Controller
     {

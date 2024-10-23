@@ -10,6 +10,7 @@ export const errorHandlerInterceptor: HttpInterceptorFn = (req, next) => {
     if (err.status === 401) {
       router.navigate(['/login']);
     }
+    console.log(JSON.stringify(err));
     return throwError(() => new Error(err));
   }));
 };

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 using System;
 using System.Linq;
+using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -25,6 +26,7 @@ namespace HorizonTask.Controllers
         public IEnumerable<TasksDTO> GetTasksList()
         {
             return _context.Tasks.Select(mapToTaskDto);
+            //return _context.Tasks.Where(x => x.UserId == GetCurrentUser().Id).Select(mapToTaskDto);
         }
 
         [HttpPut]
@@ -37,6 +39,7 @@ namespace HorizonTask.Controllers
                 Description = task.taskDescription,
                 Priority = task.taskPriority,
                 Deadline = task.taskDeadline,
+                UserId = GetCurrentUser().Id
             };
             _context.Add(taskCreate);
             _context.SaveChanges();
@@ -122,7 +125,14 @@ namespace HorizonTask.Controllers
             return url;
                 
                 
-        }             
-    }    
+        }
+        protected User? GetCurrentUser()
+        {
+            var userName = User.FindFirstValue(ClaimTypes.Name);
+
+            return _context.Users.SingleOrDefault(user => user.UserName == userName);
+        }
+
+    }
 }
 

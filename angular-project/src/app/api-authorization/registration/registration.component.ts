@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
           console.log('Registration successful!');
           this.router.navigate(['/']);
         },
-        error: (err: HttpErrorResponse) => console.log('Oops, something went wrong!', err)
+        error: (err: HttpErrorResponse) => console.log('Oops, something went wrong!', err.message)
       });
     }
   }

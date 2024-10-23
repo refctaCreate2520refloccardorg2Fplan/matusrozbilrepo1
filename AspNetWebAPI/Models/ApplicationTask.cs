@@ -13,5 +13,6 @@ namespace AspNetCoreAPI.Models
         public bool IsDone { get; set; } = false;
         public DateTime Deadline { get; set; }
         public string? imageUrl { get; set; }
+        public string? UserId { get; set; }
     }
 }
