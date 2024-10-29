@@ -33,7 +33,7 @@ const firebaseConfig = {
 // Initialize Firebase
 
 export function getBaseUrl() {
-  return 'https://horizontasks.bsite.net/api'; //horizontasks.bsite.net/api   //https://localhost:7186/api
+  return 'https://localhost:7186/api'; //https://horizontasks.bsite.net/api   //https://localhost:7186/api
 }
 
 export function tokenGetter() {
