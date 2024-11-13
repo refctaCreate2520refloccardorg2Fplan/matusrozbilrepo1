@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\api-authorization",
-    "\\src\\app\\api-authorization\\login",
     "\\src\\app\\api-authorization\\registration",
     "\\src\\app\\dashboard",
+    "\\src\\app\\main-nav",
     "\\src\\app\\taskdetail",
     "\\src\\app\\tasklist",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\firebase.json",
+  "SelectedNode": "\\public",
   "PreviewInSolutionExplorer": false
 }

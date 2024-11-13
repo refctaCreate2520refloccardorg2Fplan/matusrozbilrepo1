@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using System;
 
 namespace AspNetCoreAPI.Data
 {
@@ -12,6 +13,8 @@ namespace AspNetCoreAPI.Data
             : base(options)
         {}
         public DbSet<ApplicationTask> Tasks { get; set; }
+        public DbSet<SharedTasks> SharedTask { get; set; } = default!;
+
 
 
     }
