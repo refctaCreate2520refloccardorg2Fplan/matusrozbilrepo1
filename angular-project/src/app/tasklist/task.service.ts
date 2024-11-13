@@ -35,6 +35,11 @@ export class TaskService {
   EditTask(task: TaskDetailDTO) {
     return this.http.put<TaskDetailDTO>(this.baseUrl + '/editTask', task);
   }
+  joinTask(id: number) {
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("id", id);
+    return this.http.put<SharedTasksDTO>(this.baseUrl + '/users/joinTask/', id)//  { params: queryParams })
+  }
 
 }
 
@@ -56,3 +61,10 @@ export interface CreateTaskDTO {
   taskDeadline: Date;
 }
 
+export interface SharedTasksDTO {
+ id: number;
+ name: string;
+ description: string;
+ priority: number;
+ isdone: boolean;
+}

@@ -23,6 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class TaskdetailComponent {
   //sorry, to je dočasne
 
+  taskIdFromRoute = parseInt(this.route.snapshot.paramMap.get('id'));
+  taskDetailInfo = signal<TaskDetailDTO>(undefined);
+
   private destroy$ = new Subject<void>();
   UpdateINFO: any;
   updateForm = new FormGroup(
@@ -63,6 +66,11 @@ export class TaskdetailComponent {
       deadline: new FormControl(this.thtask().dateTime, Validators.required),*/
 
   thtask = signal<TaskDetailDTO>(undefined);
+
+onJoinTask(){
+  debugger;
+  this.taskService.joinTask(this.taskIdFromRoute).subscribe(taskDetail => { this.taskDetailInfo.set(taskDetail); });
+}
 
 onEditTask() {
   const id = parseInt(this.route.snapshot.paramMap.get('id'));

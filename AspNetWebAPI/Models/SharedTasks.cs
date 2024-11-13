@@ -13,6 +13,6 @@ namespace AspNetCoreAPI.Models
         public DateTime Deadline { get; set; }
         public string? CreatedBy { get; set; }
         public string? ImageUrl { get; set; }
-        public ICollection<SharedTasks> SharedTasksInfo { get; } = new List<SharedTasks>();
+       // public ICollection<SharedTasks> SharedTasksInfo { get; } = new List<SharedTasks>();
     }
 }

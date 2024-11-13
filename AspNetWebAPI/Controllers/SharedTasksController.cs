@@ -66,5 +66,23 @@ namespace AspNetCoreAPI.Controllers
                 Priority = sharedTaskCreate.Priority,
             };
         }
+
+        [HttpPut]
+        [Route("/users/joinTask/{id:int}")]
+        public void JoinTask([FromRoute] int id)
+        {
+            var addUser = _context.SharedTask.Where(x => x.Id == id).FirstOrDefault();
+            var User = GetCurrentUser();
+            SharedTasksUser novy = new SharedTasksUser()
+            {
+                UserId = User.Id,
+                TasksId = addUser.Id,
+                SharedTasks = addUser,
+                User = User,
+
+            };
+            _context.Add(novy);
+            _context.SaveChanges();
+        }
     }
 }
