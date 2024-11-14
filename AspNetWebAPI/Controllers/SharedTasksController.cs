@@ -24,7 +24,7 @@ namespace AspNetCoreAPI.Controllers
             return _context.Users.SingleOrDefault(user => user.UserName == userName);
         }
 
-        [HttpGet]
+        [HttpGet("/returnSharedTasks")]
         public IEnumerable<SharedTasksDTO> GetSharedTasksList()
         {
             IEnumerable<SharedTasks> sharedTasks = _context.SharedTask;
@@ -53,6 +53,7 @@ namespace AspNetCoreAPI.Controllers
             _context.SaveChanges();
             return mapToSharedTaskDto(sharedTaskCreate);
         }
+
 
         private SharedTasksDTO mapToSharedTaskDto(SharedTasks sharedTaskCreate)
         {

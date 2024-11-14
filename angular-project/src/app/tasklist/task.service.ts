@@ -40,6 +40,9 @@ export class TaskService {
     queryParams = queryParams.append("id", id);
     return this.http.put<SharedTasksDTO>(this.baseUrl + '/users/joinTask/', id)//  { params: queryParams })
   }
+  getSharedTask(){
+    return this.http.get<TaskDetailDTO[]>(this.baseUrl + '/returnSharedTasks');
+  }
 
 }
 

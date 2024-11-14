@@ -1,4 +1,5 @@
 <mat-toolbar>
+
   <ul>
     <li role="button" [routerLink]="['/']" class="xname"> <p class="brasko" [routerLink]="['/dashboard']">HorizonTasks</p></li>
   </ul>
@@ -9,6 +10,8 @@
   <ul>
     @if (authService.authenticated()) {
     <li> <a nav-button-right style="float: left; background-color: #ffffff;" [routerLink]="['/tasklist']">Tasks</a> </li>
+    
+    <li> <a nav-button-right style="float: left; background-color: #ffffff;" [routerLink]="['/sharedtask']">Shared Tasks</a> </li>
 
     <li style="float:right"> <a nav-button-right (click)="logout()">Logout</a> </li>
     } @else {
@@ -16,4 +19,8 @@
     <li style="float:right"><a style="background-color: #eef1f3 "  [routerLink]="['/register']">Registration</a></li>
     }
   </ul>
+ 
+
+
+
 </mat-toolbar>
