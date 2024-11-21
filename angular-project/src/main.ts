@@ -14,6 +14,7 @@ import { jwtInterceptor } from './app/api-authorization/jwt.interceptor';
 import { TasklistComponent } from './app/tasklist/tasklist.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { TaskdetailComponent } from './app/taskdetail/taskdetail.component';
+import { SharedTasksComponent } from './shared-tasks/shared-tasks.component';
 // Import the functions you need from the SDKs you need
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -60,7 +61,8 @@ bootstrapApplication(AppComponent, {
         { path: '', component: DashboardComponent, canActivate: [authGuard]},
         { path: 'login', component: LoginComponent},
         { path: 'register', component: RegistrationComponent },
-        { path: 'tasklist', component: TasklistComponent},
+        { path: 'tasklist', component: TasklistComponent },
+        { path: 'sharedtask', component: SharedTasksComponent},
         { path: 'taskdetail/:id', component: TaskdetailComponent}
       ]), provideAnimationsAsync()
     ]

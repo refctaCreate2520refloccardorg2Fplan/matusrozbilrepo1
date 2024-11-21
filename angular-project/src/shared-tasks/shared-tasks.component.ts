@@ -1,12 +1,14 @@
 import { Component, inject, signal } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
 import { TaskDetailDTO } from 'src/app/taskdetail/TaskDetailDTO';
 import { TaskService } from 'src/app/tasklist/task.service';
+import { SearchFilterPipe } from '../app/tasklist/search-filter.pipe';
 
 @Component({
   selector: 'app-shared-tasks',
   standalone: true,
-  imports: [],
+  imports: [SearchFilterPipe, ReactiveFormsModule, FormsModule],
   templateUrl: './shared-tasks.component.html',
   styleUrl: './shared-tasks.component.css'
 })
@@ -14,14 +16,17 @@ export class SharedTasksComponent {
   private destroy$ = new Subject<void>();
   sharedTasks = signal<TaskDetailDTO[]>([]);
   taskService = inject(TaskService);
+
   getSharedTasks(){
     this.taskService.getSharedTask()
     .pipe(takeUntil(this.destroy$))
     .subscribe(value => this.sharedTasks.set(value));
   }
+
+  searchTerm: string;
+/*
 destroyRef = inject(DestroyRef);
-private destroy$ = new Subject<void>();
-searchTerm: string;
+
 taskData = signal<TasksDTO[]>([]);
 xd: boolean = false;
 taskForm = new FormGroup(
@@ -73,7 +78,7 @@ tglbtn() {
     elem.innerHTML = "Show finished tasks";
     this.xd = false;
   }
-}
+} */
 }
 
 
