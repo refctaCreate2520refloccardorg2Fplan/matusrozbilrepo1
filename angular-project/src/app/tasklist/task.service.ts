@@ -27,27 +27,31 @@ export class TaskService {
   }
 
   deleteTask(id: number) {
-    let queryParams = new HttpParams();
-    queryParams = queryParams.append("id", id);
     return this.http.delete(this.baseUrl + '/tasklist/' + id);
   }
 
   EditTask(task: TaskDetailDTO) {
     return this.http.put<TaskDetailDTO>(this.baseUrl + '/editTask', task);
   }
+
   joinTask(id: number) {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("id", id);
-    return this.http.put<SharedTasksDTO>(this.baseUrl + '/users/joinTask/', id)//  { params: queryParams })
+    return this.http.put<SharedTasksDTO>(this.baseUrl + '/users/joinTask', null, { params: queryParams });  //{ params: queryParams })
   }
   getSharedTask(){
     return this.http.get<TaskDetailDTO[]>(this.baseUrl + '/returnSharedTasks');
+  }
+  getUserID() {
+    return this.http.get<string>(this.baseUrl + '/skuska');
   }
 
 }
 
 
-
+export interface JoinSharedTaskDTO {
+  id: number;
+}
 
 
 export interface TaskUpdateDTO {

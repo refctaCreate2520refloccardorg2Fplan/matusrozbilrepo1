@@ -3,9 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\taskdetail",
     "\\src\\app\\tasklist",
     "\\src\\shared-tasks"
   ],
-  "SelectedNode": "\\src\\app\\tasklist\\tasklist.component.css",
+  "SelectedNode": "\\src\\app\\taskdetail\\taskdetail.component.html",
   "PreviewInSolutionExplorer": false
 }

@@ -59,6 +59,9 @@ export class TaskdetailComponent {
         imageUrl: thtask.imageUrl
       });
     });
+    this.taskService.getUserID()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(result => console.log(result));
   };
     /*      name: new FormControl(this.thtask().name, Validators.required),
       description: new FormControl(this.thtask().description, Validators.required),

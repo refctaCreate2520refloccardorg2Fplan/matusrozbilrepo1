@@ -1,12 +1,14 @@
 ﻿using AspNetCoreAPI.Data;
 using AspNetCoreAPI.DTO;
 using AspNetCoreAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace AspNetCoreAPI.Controllers
 {
     [Route("[controller]")]
+
     [ApiController]
     public class SharedTasksController : ControllerBase
     {
@@ -16,10 +18,10 @@ namespace AspNetCoreAPI.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         protected User? GetCurrentUser()
         {
-            var userName = User.FindFirstValue(ClaimTypes.Name);
+            var userName = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             return _context.Users.SingleOrDefault(user => user.UserName == userName);
         }
@@ -67,10 +69,14 @@ namespace AspNetCoreAPI.Controllers
                 Priority = sharedTaskCreate.Priority,
             };
         }
-
+        [HttpGet("/skuska")]
+        public string ReturnID()
+        {
+            return GetCurrentUser().Id;
+        }
         [HttpPut]
-        [Route("/users/joinTask/{id:int}")]
-        public void JoinTask([FromRoute] int id)
+        [Route("/users/joinTask")]
+        public void JoinTask([FromQuery] int id)
         {
             var addUser = _context.SharedTask.Where(x => x.Id == id).FirstOrDefault();
             var User = GetCurrentUser();

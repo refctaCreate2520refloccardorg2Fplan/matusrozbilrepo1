@@ -6,6 +6,7 @@ namespace AspNetCoreAPI.Models
     {
         public int Id { get; set; } = default!;
         public string? Name { get; set; } = default!;
+        public string? UserID { get; set; }
         public string? Description { get; set; } = null;
         public int Priority { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
