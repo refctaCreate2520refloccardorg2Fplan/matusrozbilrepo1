@@ -3,10 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\api-authorization",
     "\\src\\app\\taskdetail",
     "\\src\\app\\tasklist",
     "\\src\\shared-tasks"
   ],
-  "SelectedNode": "\\src\\app\\taskdetail\\taskdetail.component.html",
+  "SelectedNode": "\\src\\app\\api-authorization\\authentication.service.ts",
   "PreviewInSolutionExplorer": false
 }

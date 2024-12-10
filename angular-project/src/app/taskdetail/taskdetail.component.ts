@@ -1,4 +1,4 @@
-import { Component, signal, Inject } from '@angular/core';
+import { Component, signal, Inject, inject } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from '../tasklist/task.service';
@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthenticationService, UserDTO } from '../api-authorization/authentication.service';
 
 
 @Component({
@@ -25,6 +26,9 @@ export class TaskdetailComponent {
 
   taskIdFromRoute = parseInt(this.route.snapshot.paramMap.get('id'));
   taskDetailInfo = signal<TaskDetailDTO>(undefined);
+  authService = inject(AuthenticationService);
+
+  user: UserDTO;
 
   private destroy$ = new Subject<void>();
   UpdateINFO: any;
@@ -59,9 +63,10 @@ export class TaskdetailComponent {
         imageUrl: thtask.imageUrl
       });
     });
-    this.taskService.getUserID()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(result => console.log(result));
+    this.authService.getCurrentUser().subscribe((result) => {
+      this.user = result;
+      console.table(this.user)
+    })
   };
     /*      name: new FormControl(this.thtask().name, Validators.required),
       description: new FormControl(this.thtask().description, Validators.required),

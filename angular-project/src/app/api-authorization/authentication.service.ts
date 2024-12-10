@@ -28,6 +28,10 @@ export class AuthenticationService {
     this.authenticated.set(false);
   }
 
+  getCurrentUser() {
+    return this.httpClient.get<UserDTO>(this.baseUrl + '/user');
+  }
+
   storeToken(token: string) {
     localStorage.setItem("token", token);
     this.authenticated.set(true);
@@ -38,4 +42,22 @@ export class AuthenticationService {
 
     return token && !this.jwtHelper.isTokenExpired(token);
   }
+}
+
+export interface UserDTO {
+  userName: string;
+  id: string;
+  normalizedUserName: string;
+  email: string;
+  normalizedEmail: string;
+  emailConfirmed: boolean;
+  passwordHash: string;
+  securityStamp: string;
+  concurrencyStamp: string;
+  phoneNumber: string | null;
+  phoneNumberConfirmed: boolean;
+  twoFactorEnabled: boolean;
+  lockoutEnd: Date | null;
+  lockoutEnabled: boolean;
+  accessFailedCount: number;
 }

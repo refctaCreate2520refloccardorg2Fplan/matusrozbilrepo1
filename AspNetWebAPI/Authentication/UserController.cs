@@ -1,9 +1,12 @@
-﻿using AspNetCoreAPI.Models;
+﻿using AspNetCoreAPI.Data;
+using AspNetCoreAPI.Models;
 using AspNetCoreAPI.Registration.dto;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace AspNetCoreAPI.Registration
 {
@@ -14,7 +17,7 @@ namespace AspNetCoreAPI.Registration
         private readonly UserManager<User> _userManager;
         private readonly JwtHandler _jwtHandler;
 
-        public UserController(UserManager<User> userManager, JwtHandler jwtHandler)
+        public UserController(UserManager<User> userManager, JwtHandler jwtHandler, ApplicationDbContext context)
         {
             _userManager = userManager;
             _jwtHandler = jwtHandler;

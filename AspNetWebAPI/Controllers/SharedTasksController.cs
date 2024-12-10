@@ -3,6 +3,7 @@ using AspNetCoreAPI.DTO;
 using AspNetCoreAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Security.Claims;
 
 namespace AspNetCoreAPI.Controllers
@@ -18,10 +19,11 @@ namespace AspNetCoreAPI.Controllers
         {
             _context = context;
         }
-        [Authorize]
-        protected User? GetCurrentUser()
+
+        [HttpGet("/user")]
+        public User? GetCurrentUser()
         {
-            var userName = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userName = User.FindFirstValue(ClaimTypes.Name);
 
             return _context.Users.SingleOrDefault(user => user.UserName == userName);
         }
@@ -76,20 +78,31 @@ namespace AspNetCoreAPI.Controllers
         }
         [HttpPut]
         [Route("/users/joinTask")]
-        public void JoinTask([FromQuery] int id)
+        public void JoinTask([FromQuery] int userId)
         {
-            var addUser = _context.SharedTask.Where(x => x.Id == id).FirstOrDefault();
-            var User = GetCurrentUser();
-            SharedTasksUser novy = new SharedTasksUser()
+            try
             {
-                UserId = User.Id,
-                TasksId = addUser.Id,
-                SharedTasks = addUser,
-                User = User,
+                
+            }
+            catch (Exception ex)
+            {
 
-            };
-            _context.Add(novy);
-            _context.SaveChanges();
+                /*
+                var addUser = _context.SharedTask.Where(x => x.Id == userId).FirstOrDefault();
+                var User = GetCurrentUser();
+                SharedTasksUser novy = new SharedTasksUser()
+                {
+                    UserId = User.Id,
+                    TasksId = addUser.Id,
+                    SharedTasks = addUser,
+                    User = User,
+
+                };
+                _context.Add(novy);
+                _context.SaveChanges();
+                */
+
+            }
         }
     }
 }
