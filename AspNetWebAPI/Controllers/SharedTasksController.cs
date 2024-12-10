@@ -78,31 +78,24 @@ namespace AspNetCoreAPI.Controllers
         }
         [HttpPut]
         [Route("/users/joinTask")]
-        public void JoinTask([FromQuery] int userId)
+        public void JoinTask([FromQuery] string userId)
         {
-            try
-            {
-                
-            }
-            catch (Exception ex)
-            {
 
-                /*
-                var addUser = _context.SharedTask.Where(x => x.Id == userId).FirstOrDefault();
-                var User = GetCurrentUser();
+            var User = GetCurrentUser();
+            var test = _context.SharedTasksUser.FirstOrDefault();
+                var addUser = _context.SharedTasksUser.Where(x => x.UserID == userId).FirstOrDefault();
+
                 SharedTasksUser novy = new SharedTasksUser()
                 {
-                    UserId = User.Id,
-                    TasksId = addUser.Id,
-                    SharedTasks = addUser,
-                    User = User,
+                    UserID = User.Id,
+                    TasksId = addUser.TasksId,
 
                 };
                 _context.Add(novy);
                 _context.SaveChanges();
-                */
+                
 
-            }
+            
         }
     }
 }

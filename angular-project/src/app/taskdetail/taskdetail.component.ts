@@ -76,7 +76,6 @@ export class TaskdetailComponent {
   thtask = signal<TaskDetailDTO>(undefined);
 
 onJoinTask(){
-  debugger;
   this.taskService.joinTask(this.taskIdFromRoute).subscribe(taskDetail => { this.taskDetailInfo.set(taskDetail); });
 }
 

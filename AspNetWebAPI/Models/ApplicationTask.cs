@@ -14,5 +14,6 @@ namespace AspNetCoreAPI.Models
         public DateTime Deadline { get; set; }
         public string? imageUrl { get; set; }
         public string? UserId { get; set; }
+        public bool? IsShared { get; set; }
     }
 }
