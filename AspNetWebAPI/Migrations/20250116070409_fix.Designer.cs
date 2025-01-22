@@ -4,6 +4,7 @@ using AspNetCoreAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AspNetCoreAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250116070409_fix")]
+    partial class fix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +75,10 @@ namespace AspNetCoreAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ApplicationTaskId")
+                    b.Property<int>("ApplicationTaskTaskId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TaskId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
@@ -81,7 +87,7 @@ namespace AspNetCoreAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationTaskId");
+                    b.HasIndex("ApplicationTaskTaskId");
 
                     b.HasIndex("UserId");
 
@@ -301,7 +307,7 @@ namespace AspNetCoreAPI.Migrations
                 {
                     b.HasOne("AspNetCoreAPI.Models.ApplicationTask", "ApplicationTask")
                         .WithMany("SharedTasks")
-                        .HasForeignKey("ApplicationTaskId")
+                        .HasForeignKey("ApplicationTaskTaskId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -5,7 +5,7 @@ namespace AspNetCoreAPI.Models
     public class ApplicationTask
     {
         [Key]
-        public int Id { get; set; }
+        public int TaskId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int Priority { get; set; }
@@ -15,5 +15,7 @@ namespace AspNetCoreAPI.Models
         public string? imageUrl { get; set; }
         public string? UserId { get; set; }
         public bool? IsShared { get; set; }
+
+        public List<User> Users { get; } = [];
     }
 }

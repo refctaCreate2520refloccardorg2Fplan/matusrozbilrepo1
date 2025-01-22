@@ -13,9 +13,7 @@ namespace AspNetCoreAPI.Data
             : base(options)
         {}
         public DbSet<ApplicationTask> Tasks { get; set; }
-        public DbSet<SharedTasksUser> SharedTasksUser { get; set; } = default!;
+        public DbSet<User> Users {  get; set; }
         
-
-
     }
 }

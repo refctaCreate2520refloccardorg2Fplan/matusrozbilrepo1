@@ -26,6 +26,7 @@ namespace HorizonTask.Controllers
         public IEnumerable<TasksDTO> GetTasksList()
         {
             //return _context.Tasks.Select(mapToTaskDto);
+            
             return _context.Tasks.Where(x => x.UserId == GetCurrentUser().Id).Select(mapToTaskDto);
         }
 
@@ -49,7 +50,7 @@ namespace HorizonTask.Controllers
         private TasksDTO mapToTaskDto(ApplicationTask taskCreate)
         {
             return new TasksDTO { 
-                Id = taskCreate.Id,
+                Id = taskCreate.TaskId,
                 Description = taskCreate.Description,
                 Deadline= taskCreate.Deadline,
                 IsDone = taskCreate.IsDone,
@@ -62,7 +63,7 @@ namespace HorizonTask.Controllers
         [Route("/tasklist/{id:int}")]
         public TasksDTO deleteTask([FromRoute] int id)
         {
-            var minus = _context.Tasks.Where(x => x.Id == id).Single();
+            var minus = _context.Tasks.Where(x => x.TaskId == id).Single();
             _context.Remove(minus);
             _context.SaveChanges();
             return null;
@@ -73,13 +74,13 @@ namespace HorizonTask.Controllers
 
         public TaskDetailDTO GetTaskById(int id)
         {
-            ApplicationTask task = _context.Tasks.Where(task => task.Id == id).FirstOrDefault();
+            ApplicationTask task = _context.Tasks.Where(task => task.TaskId == id).FirstOrDefault();
 
             if (task != null)
             {
                 return new TaskDetailDTO
                 {
-                    Id = task.Id,
+                    Id = task.TaskId,
                     Name = task.Name,
                     Description = task.Description,
                     Priority = task.Priority,
@@ -96,7 +97,7 @@ namespace HorizonTask.Controllers
         [Route("/editTask")]
         public TaskDetailDTO EditTask(TaskDetailDTO task)
         {
-            var taskik = _context.Tasks.Where(x => x.Id == task.Id).Single();
+            var taskik = _context.Tasks.Where(x => x.TaskId == task.Id).Single();
             taskik.Name = task.Name;
             taskik.Description = task.Description;
             taskik.imageUrl = task.ImageUrl;
@@ -119,7 +120,7 @@ namespace HorizonTask.Controllers
         [HttpPost]
         [Route("/save-url/{id:int}")]
         public string imgUrl([FromRoute]int id, string url) {
-            var task = _context.Tasks.FirstOrDefault(x => x.Id == id);
+            var task = _context.Tasks.FirstOrDefault(x => x.TaskId == id);
             task.imageUrl = url;
             _context.SaveChanges();
             return url;
