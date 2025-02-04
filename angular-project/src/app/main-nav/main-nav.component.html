@@ -1,17 +1,15 @@
-<mat-toolbar>
+<mat-toolbar style="font-family: 'Flux';">
 
   <ul>
     <li role="button" [routerLink]="['/']" class="xname"> <p class="brasko" [routerLink]="['/dashboard']">HorizonTasks</p></li>
   </ul>
-  <span class="spacer"></span>
-  <button class="button-30" role="button"> {{ time | date:'hh:mm:ss a' }}</button>
-  <span class="spacer"></span>
-
-  <ul>
+  <span></span>
+  <span></span>
+  <ul style="padding-left: 60vw;">
     @if (authService.authenticated()) {
-    <li> <a nav-button-right style="float: left; background-color: #ffffff;" [routerLink]="['/tasklist']">Tasks</a> </li>
+    <li> <a nav-button-right style="float: right; background-color: #cbfff8;" [routerLink]="['/tasklist']">Tasks</a> </li>
     
-    <li> <a nav-button-right style="float: left; background-color: #ffffff;" [routerLink]="['/sharedtask']">Shared Tasks</a> </li>
+    <li> <a nav-button-right style="float: right; background-color: #ddffd1;" [routerLink]="['/sharedtask']">Shared Tasks</a> </li>
 
     <li style="float:right"> <a nav-button-right (click)="logout()">Logout</a> </li>
     } @else {

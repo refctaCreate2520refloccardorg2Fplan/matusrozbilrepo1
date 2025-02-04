@@ -28,23 +28,4 @@ export class MainNavComponent {
     this.router.navigate(['/login']);
   }
 
-
-  time = new Date();
-  private destroy$ = new Subject<void>();
-  timeSubscription: Subscription;
-  ngOnInit() {
-    const timeSource = timer(0, 1000);
-    this.timeSubscription = timeSource.pipe(
-      takeUntil(this.destroy$)
-    ).subscribe(() => {
-      this.time = new Date();
-    });
-  }
-
-
-  ngOnDestroy() {
-    if (this.timeSubscription) {
-      this.timeSubscription.unsubscribe();
-    }
-  }
 }
