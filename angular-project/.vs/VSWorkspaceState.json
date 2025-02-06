@@ -3,10 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\api-authorization",
+    "\\src\\app\\dashboard",
+    "\\src\\app\\main-nav",
     "\\src\\app\\taskdetail",
     "\\src\\app\\tasklist",
-    "\\src\\shared-tasks"
+    "\\src\\assets"
   ],
+  "SelectedNode": "\\src\\app\\dashboard\\dashboard.component.css",
   "PreviewInSolutionExplorer": false
 }
